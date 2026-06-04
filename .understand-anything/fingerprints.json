@@ -1,0 +1,5353 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "ed67ab96aeafda9f73cab53db491da2d6f590a07",
+  "generatedAt": "2026-06-03T03:21:03.518Z",
+  "files": {
+    ".github/ISSUE_TEMPLATE/bug_report.md": {
+      "filePath": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "contentHash": "0c8d64f29fb4536513653bf8c97da30f3340e2041b91c8952db1515d6b23a7b3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 39,
+      "hasStructuralAnalysis": true
+    },
+    ".github/ISSUE_TEMPLATE/feature_request.md": {
+      "filePath": ".github/ISSUE_TEMPLATE/feature_request.md",
+      "contentHash": "518789430e4b8f627620d50ab9ee7b52251a16e992b4656fd2e7f721860f8a54",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 21,
+      "hasStructuralAnalysis": true
+    },
+    ".github/PULL_REQUEST_TEMPLATE/solution_submission_pull_request_template.md": {
+      "filePath": ".github/PULL_REQUEST_TEMPLATE/solution_submission_pull_request_template.md",
+      "contentHash": "a743e17431dfeaea21ebdc219ed01f06732fcd95dab25c6a52a3e0a063ee5439",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 10,
+      "hasStructuralAnalysis": true
+    },
+    ".github/workflows/test.yml": {
+      "filePath": ".github/workflows/test.yml",
+      "contentHash": "5a86c632358edce79239846444093555cb45e449e7756a1c0e2dcd372c92858d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 47,
+      "hasStructuralAnalysis": true
+    },
+    ".pre-commit-config.yaml": {
+      "filePath": ".pre-commit-config.yaml",
+      "contentHash": "f9302ab5a20d4171f960c4212f09e79eb654ae2f1d1723ca63209177daa56095",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 37,
+      "hasStructuralAnalysis": true
+    },
+    ".understand-anything/.understandignore": {
+      "filePath": ".understand-anything/.understandignore",
+      "contentHash": "f2a7d0bb9c1c4926d23f01610b18cce652428fc6d363c5f72906d972021896a0",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 88,
+      "hasStructuralAnalysis": false
+    },
+    "app/.env": {
+      "filePath": "app/.env",
+      "contentHash": "3d8ac81d370e17729a5cbe6f1751f9785f500da2a249030adbf74753182f18df",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "app/alembic.ini": {
+      "filePath": "app/alembic.ini",
+      "contentHash": "f5bd59616154e33746c4dd6c332769187b23574dc21cff13c75fb05818990a8d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 117,
+      "hasStructuralAnalysis": false
+    },
+    "app/apis/admin/schemas.py": {
+      "filePath": "app/apis/admin/schemas.py",
+      "contentHash": "45c4b358f888a578dae2cfb1e13b37778f08342d6914a242af0e75a3a834ad0e",
+      "functions": [],
+      "classes": [
+        {
+          "name": "DiskUsage",
+          "methods": [],
+          "properties": [
+            "output"
+          ],
+          "exported": true,
+          "lineCount": 2
+        }
+      ],
+      "imports": [
+        {
+          "source": "pydantic",
+          "specifiers": [
+            "BaseModel"
+          ]
+        }
+      ],
+      "exports": [
+        "DiskUsage"
+      ],
+      "totalLines": 6,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/admin/service.py": {
+      "filePath": "app/apis/admin/service.py",
+      "contentHash": "8c4ff95c9b60f4bfaf78b2ac6b37cfb333667e698de16b1e75c6c951865b505e",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "apis.admin.services.get_disk_stats_service",
+          "specifiers": [
+            "get_disk_stats_router"
+          ]
+        },
+        {
+          "source": "apis.admin.services.reset_chef_password_service",
+          "specifiers": [
+            "reset_chef_password_router"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 10,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/admin/services/get_disk_stats_service.py": {
+      "filePath": "app/apis/admin/services/get_disk_stats_service.py",
+      "contentHash": "fe589171130d7b7d5711d46e6a0c27221760ea0ae8df662eb6fe2281768fd0a5",
+      "functions": [
+        {
+          "name": "get_disk_usage_stats",
+          "params": [
+            "current_user",
+            "parameters",
+            "db"
+          ],
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "apis.admin.schemas",
+          "specifiers": [
+            "DiskUsage"
+          ]
+        },
+        {
+          "source": "apis.admin.utils",
+          "specifiers": [
+            "get_disk_usage"
+          ]
+        },
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "get_current_user"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "User",
+            "UserRole"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Depends",
+            "HTTPException",
+            "status"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        },
+        {
+          "source": "typing_extensions",
+          "specifiers": [
+            "Annotated"
+          ]
+        }
+      ],
+      "exports": [
+        "get_disk_usage_stats"
+      ],
+      "totalLines": 28,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/admin/services/reset_chef_password_service.py": {
+      "filePath": "app/apis/admin/services/reset_chef_password_service.py",
+      "contentHash": "e9288f59b4881efb963bf4deccfcd858ec3ecb6de74820be11d4830582b41c96",
+      "functions": [
+        {
+          "name": "get_reset_chef_password",
+          "params": [
+            "request",
+            "db"
+          ],
+          "exported": true,
+          "lineCount": 21
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "secrets",
+          "specifiers": [
+            "secrets"
+          ]
+        },
+        {
+          "source": "string",
+          "specifiers": [
+            "string"
+          ]
+        },
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "update_user_password"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "settings"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Depends",
+            "HTTPException",
+            "Request",
+            "status"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        }
+      ],
+      "exports": [
+        "get_reset_chef_password"
+      ],
+      "totalLines": 41,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/admin/utils.py": {
+      "filePath": "app/apis/admin/utils.py",
+      "contentHash": "f1243215bd87e73a8f87ae66a9bb31c4a571fc3f17afea818ee8b8d37523e974",
+      "functions": [
+        {
+          "name": "get_disk_usage",
+          "params": [
+            "parameters"
+          ],
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "subprocess",
+          "specifiers": [
+            "subprocess"
+          ]
+        }
+      ],
+      "exports": [
+        "get_disk_usage"
+      ],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/auth/exceptions.py": {
+      "filePath": "app/apis/auth/exceptions.py",
+      "contentHash": "6667517d103b163414f26970242d6d8baa61c91d45183492cfd33d1fd84a7a81",
+      "functions": [],
+      "classes": [
+        {
+          "name": "UserAlreadyExistsException",
+          "methods": [],
+          "properties": [],
+          "exported": true,
+          "lineCount": 2
+        }
+      ],
+      "imports": [],
+      "exports": [
+        "UserAlreadyExistsException"
+      ],
+      "totalLines": 3,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/auth/schemas.py": {
+      "filePath": "app/apis/auth/schemas.py",
+      "contentHash": "74e5c08d6bec06f84805619bd7802e9384f3d06c64b0d325fca6a138b46abc05",
+      "functions": [],
+      "classes": [
+        {
+          "name": "Token",
+          "methods": [],
+          "properties": [
+            "access_token",
+            "token_type"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "TokenData",
+          "methods": [],
+          "properties": [
+            "username"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "User",
+          "methods": [],
+          "properties": [
+            "username",
+            "phone_number",
+            "first_name",
+            "last_name",
+            "role"
+          ],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "UserRead",
+          "methods": [],
+          "properties": [
+            "username",
+            "phone_number",
+            "first_name",
+            "last_name",
+            "role"
+          ],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "UserUpdate",
+          "methods": [],
+          "properties": [
+            "username",
+            "first_name",
+            "last_name",
+            "phone_number"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "UserCreate",
+          "methods": [],
+          "properties": [
+            "username",
+            "password",
+            "phone_number",
+            "first_name",
+            "last_name"
+          ],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "NewPasswordData",
+          "methods": [],
+          "properties": [
+            "username",
+            "reset_password_code",
+            "new_password"
+          ],
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "imports": [
+        {
+          "source": "typing",
+          "specifiers": [
+            "Union"
+          ]
+        },
+        {
+          "source": "pydantic",
+          "specifiers": [
+            "BaseModel"
+          ]
+        }
+      ],
+      "exports": [
+        "Token",
+        "TokenData",
+        "User",
+        "UserRead",
+        "UserUpdate",
+        "UserCreate",
+        "NewPasswordData"
+      ],
+      "totalLines": 50,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/auth/service.py": {
+      "filePath": "app/apis/auth/service.py",
+      "contentHash": "90ebe50828d6dd51c0f0590ae51f4096613d4292d369168b9e0b71a53012bc52",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "apis.auth.services.get_profile_service",
+          "specifiers": [
+            "get_profile_router"
+          ]
+        },
+        {
+          "source": "apis.auth.services.get_token_service",
+          "specifiers": [
+            "get_token_router"
+          ]
+        },
+        {
+          "source": "apis.auth.services.patch_profile_service",
+          "specifiers": [
+            "patch_profile_router"
+          ]
+        },
+        {
+          "source": "apis.auth.services.register_user_service",
+          "specifiers": [
+            "register_user_router"
+          ]
+        },
+        {
+          "source": "apis.auth.services.reset_password_new_password_service",
+          "specifiers": [
+            "reset_password_new_password_router"
+          ]
+        },
+        {
+          "source": "apis.auth.services.reset_password_service",
+          "specifiers": [
+            "reset_password_router"
+          ]
+        },
+        {
+          "source": "apis.auth.services.update_profile_service",
+          "specifiers": [
+            "update_profile_router"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 20,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/auth/services/get_profile_service.py": {
+      "filePath": "app/apis/auth/services/get_profile_service.py",
+      "contentHash": "6a0b9002b7dbfe48a26e2fb75e1d945b9c5bc2713a16c2cb47e24808efb2dc1e",
+      "functions": [
+        {
+          "name": "get_profile",
+          "params": [
+            "current_user"
+          ],
+          "exported": true,
+          "lineCount": 2
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "apis.auth.schemas",
+          "specifiers": [
+            "User",
+            "UserRead"
+          ]
+        },
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "get_current_user"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Depends"
+          ]
+        },
+        {
+          "source": "typing_extensions",
+          "specifiers": [
+            "Annotated"
+          ]
+        }
+      ],
+      "exports": [
+        "get_profile"
+      ],
+      "totalLines": 12,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/auth/services/get_token_service.py": {
+      "filePath": "app/apis/auth/services/get_token_service.py",
+      "contentHash": "0f3a889d930afe36da5d5b470083617b31c9d3d02dcf63a8e55571a144142668",
+      "functions": [
+        {
+          "name": "get_token",
+          "params": [
+            "form_data",
+            "db"
+          ],
+          "returnType": "Token",
+          "exported": true,
+          "lineCount": 16
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "datetime",
+          "specifiers": [
+            "timedelta"
+          ]
+        },
+        {
+          "source": "apis.auth.schemas",
+          "specifiers": [
+            "Token"
+          ]
+        },
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "authenticate_user",
+            "create_access_token"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Depends",
+            "HTTPException",
+            "status"
+          ]
+        },
+        {
+          "source": "fastapi.security",
+          "specifiers": [
+            "OAuth2PasswordRequestForm"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        },
+        {
+          "source": "typing_extensions",
+          "specifiers": [
+            "Annotated"
+          ]
+        }
+      ],
+      "exports": [
+        "get_token"
+      ],
+      "totalLines": 33,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/auth/services/patch_profile_service.py": {
+      "filePath": "app/apis/auth/services/patch_profile_service.py",
+      "contentHash": "bcaa9d9872f6321dc1b90582fc087feb9f46a49ac311dea2b87d42e80b0721c3",
+      "functions": [
+        {
+          "name": "patch_profile",
+          "params": [
+            "user",
+            "current_user",
+            "db"
+          ],
+          "exported": true,
+          "lineCount": 16
+        }
+      ],
+      "classes": [
+        {
+          "name": "UserRead",
+          "methods": [],
+          "properties": [
+            "username",
+            "phone_number",
+            "first_name",
+            "last_name",
+            "role"
+          ],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "UserUpdate",
+          "methods": [],
+          "properties": [
+            "first_name",
+            "last_name",
+            "phone_number"
+          ],
+          "exported": true,
+          "lineCount": 9
+        }
+      ],
+      "imports": [
+        {
+          "source": "typing",
+          "specifiers": [
+            "Union"
+          ]
+        },
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "get_current_user",
+            "get_user_by_username"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "User"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Depends",
+            "status"
+          ]
+        },
+        {
+          "source": "pydantic",
+          "specifiers": [
+            "BaseModel",
+            "Extra"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        },
+        {
+          "source": "typing_extensions",
+          "specifiers": [
+            "Annotated"
+          ]
+        }
+      ],
+      "exports": [
+        "UserRead",
+        "UserUpdate",
+        "patch_profile"
+      ],
+      "totalLines": 50,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/auth/services/register_user_service.py": {
+      "filePath": "app/apis/auth/services/register_user_service.py",
+      "contentHash": "1b66287be28376fc87be3e3b26811c0fd30cd0e4e4afddc039e7f542ceca34d8",
+      "functions": [
+        {
+          "name": "register_user",
+          "params": [
+            "user",
+            "request",
+            "db"
+          ],
+          "exported": true,
+          "lineCount": 34
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "apis.auth.exceptions",
+          "specifiers": [
+            "UserAlreadyExistsException"
+          ]
+        },
+        {
+          "source": "apis.auth.schemas",
+          "specifiers": [
+            "UserCreate",
+            "UserRead"
+          ]
+        },
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "create_user"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Depends",
+            "HTTPException",
+            "Request",
+            "status"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        }
+      ],
+      "exports": [
+        "register_user"
+      ],
+      "totalLines": 53,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/auth/services/reset_password_new_password_service.py": {
+      "filePath": "app/apis/auth/services/reset_password_new_password_service.py",
+      "contentHash": "b019687e7e82ebfbaee41f27279ad9c16c19760581866d5aa05ec38aa515b338",
+      "functions": [
+        {
+          "name": "set_new_password",
+          "params": [
+            "data",
+            "db"
+          ],
+          "exported": true,
+          "lineCount": 36
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "datetime",
+          "specifiers": [
+            "datetime"
+          ]
+        },
+        {
+          "source": "apis.auth.schemas",
+          "specifiers": [
+            "NewPasswordData"
+          ]
+        },
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "update_user_password"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "User"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Depends",
+            "HTTPException",
+            "status"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        }
+      ],
+      "exports": [
+        "set_new_password"
+      ],
+      "totalLines": 55,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/auth/services/reset_password_service.py": {
+      "filePath": "app/apis/auth/services/reset_password_service.py",
+      "contentHash": "6f0ffb5ac1fcf5c3b939661da05b68fe2346bbeef096dba6d8285bab9f464780",
+      "functions": [
+        {
+          "name": "reset_password",
+          "params": [
+            "data",
+            "db"
+          ],
+          "exported": true,
+          "lineCount": 18
+        }
+      ],
+      "classes": [
+        {
+          "name": "ResetPasswordData",
+          "methods": [],
+          "properties": [
+            "username"
+          ],
+          "exported": true,
+          "lineCount": 2
+        }
+      ],
+      "imports": [
+        {
+          "source": "apis.auth.utils.text_code_utils",
+          "specifiers": [
+            "generate_and_send_code_to_user"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "User",
+            "UserRole"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Depends",
+            "HTTPException",
+            "status"
+          ]
+        },
+        {
+          "source": "pydantic",
+          "specifiers": [
+            "BaseModel"
+          ]
+        },
+        {
+          "source": "rate_limiting",
+          "specifiers": [
+            "limiter"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        }
+      ],
+      "exports": [
+        "ResetPasswordData",
+        "reset_password"
+      ],
+      "totalLines": 38,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/auth/services/update_profile_service.py": {
+      "filePath": "app/apis/auth/services/update_profile_service.py",
+      "contentHash": "87dc9f76d33d5a418c415eade8c26b501706705ebde9f33a38b80085f0eaffe6",
+      "functions": [
+        {
+          "name": "update_profile",
+          "params": [
+            "user",
+            "current_user",
+            "db"
+          ],
+          "exported": true,
+          "lineCount": 16
+        }
+      ],
+      "classes": [
+        {
+          "name": "UserUpdate",
+          "methods": [],
+          "properties": [
+            "username",
+            "first_name",
+            "last_name",
+            "phone_number"
+          ],
+          "exported": true,
+          "lineCount": 5
+        }
+      ],
+      "imports": [
+        {
+          "source": "typing",
+          "specifiers": [
+            "Union"
+          ]
+        },
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "get_current_user",
+            "get_user_by_username"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "User"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Depends",
+            "status"
+          ]
+        },
+        {
+          "source": "pydantic",
+          "specifiers": [
+            "BaseModel"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        },
+        {
+          "source": "typing_extensions",
+          "specifiers": [
+            "Annotated"
+          ]
+        }
+      ],
+      "exports": [
+        "UserUpdate",
+        "update_profile"
+      ],
+      "totalLines": 38,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/auth/utils/__init__.py": {
+      "filePath": "app/apis/auth/utils/__init__.py",
+      "contentHash": "e2b8330fb2a708d55a976cc23bc7f869725e38046bf35af02160dd8f67fd4006",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": ".jwt_auth",
+          "specifiers": [
+            "*"
+          ]
+        },
+        {
+          "source": ".roles_based_auth_checker",
+          "specifiers": [
+            "RolesBasedAuthChecker"
+          ]
+        },
+        {
+          "source": ".utils",
+          "specifiers": [
+            "*"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 4,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/auth/utils/jwt_auth.py": {
+      "filePath": "app/apis/auth/utils/jwt_auth.py",
+      "contentHash": "23d832ce4d7f894c5a5d4a001017c836a1f0b2c2dfdfaaa65b8be47a8cfb4a40",
+      "functions": [
+        {
+          "name": "get_current_user",
+          "params": [
+            "token",
+            "db"
+          ],
+          "exported": true,
+          "lineCount": 26
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "apis.auth.schemas",
+          "specifiers": [
+            "TokenData"
+          ]
+        },
+        {
+          "source": "apis.auth.utils.utils",
+          "specifiers": [
+            "get_user_by_username"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "Settings"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "Depends",
+            "HTTPException",
+            "status"
+          ]
+        },
+        {
+          "source": "fastapi.security",
+          "specifiers": [
+            "OAuth2PasswordBearer"
+          ]
+        },
+        {
+          "source": "jose",
+          "specifiers": [
+            "JWTError",
+            "jwt"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        },
+        {
+          "source": "typing_extensions",
+          "specifiers": [
+            "Annotated"
+          ]
+        }
+      ],
+      "exports": [
+        "get_current_user"
+      ],
+      "totalLines": 44,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/auth/utils/roles_based_auth_checker.py": {
+      "filePath": "app/apis/auth/utils/roles_based_auth_checker.py",
+      "contentHash": "7fa9bde6c37e130d5afe0ba7f23c1d17ae4095810aba22155c8cdd04d90210d6",
+      "functions": [],
+      "classes": [
+        {
+          "name": "RolesBasedAuthChecker",
+          "methods": [
+            "__init__",
+            "__call__"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "imports": [
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "get_current_user"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "User"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "Depends",
+            "HTTPException"
+          ]
+        }
+      ],
+      "exports": [
+        "RolesBasedAuthChecker"
+      ],
+      "totalLines": 18,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/auth/utils/text_code_utils.py": {
+      "filePath": "app/apis/auth/utils/text_code_utils.py",
+      "contentHash": "032a43d5f14a9b25f406b20f63e8f5733596a11ab8de02c71e3c3497c405ce93",
+      "functions": [
+        {
+          "name": "generate_and_send_code_to_user",
+          "params": [
+            "user",
+            "db"
+          ],
+          "exported": true,
+          "lineCount": 10
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "secrets",
+          "specifiers": [
+            "secrets"
+          ]
+        },
+        {
+          "source": "datetime",
+          "specifiers": [
+            "datetime",
+            "timedelta"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "User"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        },
+        {
+          "source": ".utils",
+          "specifiers": [
+            "send_code_to_phone_number"
+          ]
+        }
+      ],
+      "exports": [
+        "generate_and_send_code_to_user"
+      ],
+      "totalLines": 20,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/auth/utils/utils.py": {
+      "filePath": "app/apis/auth/utils/utils.py",
+      "contentHash": "63a4e5a24895a3543141f8cf61e4b6c0637b54fa04370ee2774b3aa70d58a6e3",
+      "functions": [
+        {
+          "name": "verify_password",
+          "params": [
+            "plain_password",
+            "hashed_password"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "get_password_hash",
+          "params": [
+            "password"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "get_user_by_username",
+          "params": [
+            "db",
+            "username"
+          ],
+          "returnType": "User",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "get_user_by_id",
+          "params": [
+            "db",
+            "user_id"
+          ],
+          "returnType": "User",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "update_user_password",
+          "params": [
+            "db",
+            "username",
+            "password"
+          ],
+          "returnType": "User",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "get_user_by_phone_number",
+          "params": [
+            "db",
+            "phone_number"
+          ],
+          "returnType": "User",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "authenticate_user",
+          "params": [
+            "db",
+            "username",
+            "password"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "create_user",
+          "params": [
+            "db",
+            "username",
+            "password",
+            "first_name",
+            "last_name",
+            "phone_number",
+            "role"
+          ],
+          "exported": true,
+          "lineCount": 26
+        },
+        {
+          "name": "create_user_if_not_exists",
+          "params": [
+            "db",
+            "username",
+            "password",
+            "first_name",
+            "last_name",
+            "phone_number",
+            "role"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "update_user",
+          "params": [
+            "db",
+            "username",
+            "user"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "create_access_token",
+          "params": [
+            "data",
+            "expires_delta"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "send_code_to_phone_number",
+          "params": [
+            "phone_number",
+            "code"
+          ],
+          "exported": true,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "datetime",
+          "specifiers": [
+            "datetime",
+            "timedelta",
+            "timezone"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Union"
+          ]
+        },
+        {
+          "source": "apis.auth.exceptions",
+          "specifiers": [
+            "UserAlreadyExistsException"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "Settings"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "User",
+            "UserRole"
+          ]
+        },
+        {
+          "source": "jose",
+          "specifiers": [
+            "jwt"
+          ]
+        },
+        {
+          "source": "passlib.context",
+          "specifiers": [
+            "CryptContext"
+          ]
+        }
+      ],
+      "exports": [
+        "verify_password",
+        "get_password_hash",
+        "get_user_by_username",
+        "get_user_by_id",
+        "update_user_password",
+        "get_user_by_phone_number",
+        "authenticate_user",
+        "create_user",
+        "create_user_if_not_exists",
+        "update_user",
+        "create_access_token",
+        "send_code_to_phone_number"
+      ],
+      "totalLines": 133,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/debug/service.py": {
+      "filePath": "app/apis/debug/service.py",
+      "contentHash": "6a326ad22f7209c63ed1d307aa9d5856f682ff0461673bf6b090db42afdfe99d",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "apis.debug.services.get_debug_info_service",
+          "specifiers": [
+            "get_debug_info_router"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 10,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/debug/services/get_debug_info_service.py": {
+      "filePath": "app/apis/debug/services/get_debug_info_service.py",
+      "contentHash": "04aed34d266b2f1c287f33df3b8cc75b32649389b54874962841529855b6531c",
+      "functions": [
+        {
+          "name": "get_debug_info_service",
+          "params": [],
+          "exported": true,
+          "lineCount": 43
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "platform",
+          "specifiers": [
+            "platform"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "psutil",
+          "specifiers": [
+            "psutil"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        "get_debug_info_service"
+      ],
+      "totalLines": 55,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/healthcheck/service.py": {
+      "filePath": "app/apis/healthcheck/service.py",
+      "contentHash": "c8b194434ab1bd1a9e21a8fe8a0d67bb02cb8fda4dea650e680b7b12cf2b0bcb",
+      "functions": [
+        {
+          "name": "healthcheck",
+          "params": [
+            "response"
+          ],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Response"
+          ]
+        }
+      ],
+      "exports": [
+        "healthcheck"
+      ],
+      "totalLines": 10,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/menu/schemas.py": {
+      "filePath": "app/apis/menu/schemas.py",
+      "contentHash": "4aeb94a4a3bf21f5f6102349e0c3c0a6d05eb7261440f1b3fceced6727b6eab0",
+      "functions": [],
+      "classes": [
+        {
+          "name": "MenuItemCreate",
+          "methods": [],
+          "properties": [
+            "name",
+            "price",
+            "category",
+            "image_url",
+            "description"
+          ],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "MenuItem",
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "price",
+            "category",
+            "description",
+            "image_base64"
+          ],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "imports": [
+        {
+          "source": "typing",
+          "specifiers": [
+            "Optional"
+          ]
+        },
+        {
+          "source": "pydantic",
+          "specifiers": [
+            "BaseModel"
+          ]
+        }
+      ],
+      "exports": [
+        "MenuItemCreate",
+        "MenuItem"
+      ],
+      "totalLines": 21,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/menu/service.py": {
+      "filePath": "app/apis/menu/service.py",
+      "contentHash": "9d57e37f367c8dfc69f035bb01a62bca25cfa41a6f282571c5ab7d54328bf460",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "apis.menu.services.create_menu_item_service",
+          "specifiers": [
+            "create_menu_item_router"
+          ]
+        },
+        {
+          "source": "apis.menu.services.delete_menu_item_service",
+          "specifiers": [
+            "delete_menu_item_router"
+          ]
+        },
+        {
+          "source": "apis.menu.services.get_menu_service",
+          "specifiers": [
+            "get_menu_router"
+          ]
+        },
+        {
+          "source": "apis.menu.services.update_menu_item_service",
+          "specifiers": [
+            "update_menu_item_router"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 18,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/menu/services/create_menu_item_service.py": {
+      "filePath": "app/apis/menu/services/create_menu_item_service.py",
+      "contentHash": "c3a82109cd822ec999fa5b3914a57a25c42e3a7e574f42a8065d08fecd2d5f47",
+      "functions": [
+        {
+          "name": "create_menu_item",
+          "params": [
+            "menu_item",
+            "current_user",
+            "db",
+            "auth"
+          ],
+          "exported": true,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "RolesBasedAuthChecker",
+            "get_current_user"
+          ]
+        },
+        {
+          "source": "apis.menu",
+          "specifiers": [
+            "schemas",
+            "utils"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "User",
+            "UserRole"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Depends",
+            "status"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        },
+        {
+          "source": "typing_extensions",
+          "specifiers": [
+            "Annotated"
+          ]
+        }
+      ],
+      "exports": [
+        "create_menu_item"
+      ],
+      "totalLines": 23,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/menu/services/delete_menu_item_service.py": {
+      "filePath": "app/apis/menu/services/delete_menu_item_service.py",
+      "contentHash": "2a3b1a0eec36316d09007dd8a813e39b6d16df4d42007d553c9428f6b9a1f545",
+      "functions": [
+        {
+          "name": "delete_menu_item",
+          "params": [
+            "item_id",
+            "current_user",
+            "db"
+          ],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "RolesBasedAuthChecker",
+            "get_current_user"
+          ]
+        },
+        {
+          "source": "apis.menu",
+          "specifiers": [
+            "utils"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "User",
+            "UserRole"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Depends",
+            "status"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        },
+        {
+          "source": "typing_extensions",
+          "specifiers": [
+            "Annotated"
+          ]
+        }
+      ],
+      "exports": [
+        "delete_menu_item"
+      ],
+      "totalLines": 20,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/menu/services/get_menu_service.py": {
+      "filePath": "app/apis/menu/services/get_menu_service.py",
+      "contentHash": "85a10eda6d6d8ccb3483080c5c8791517b6092a2e9aaa5a104537a855549084d",
+      "functions": [
+        {
+          "name": "get_menu",
+          "params": [
+            "db"
+          ],
+          "exported": true,
+          "lineCount": 2
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "typing",
+          "specifiers": [
+            "List"
+          ]
+        },
+        {
+          "source": "apis.menu",
+          "specifiers": [
+            "schemas"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "MenuItem"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Depends"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        }
+      ],
+      "exports": [
+        "get_menu"
+      ],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/menu/services/update_menu_item_service.py": {
+      "filePath": "app/apis/menu/services/update_menu_item_service.py",
+      "contentHash": "685380a09b6d64e002f5e330dc8eef00a7caca8c202d4fd90cc27c2248f0e29b",
+      "functions": [
+        {
+          "name": "update_menu_item",
+          "params": [
+            "item_id",
+            "menu_item",
+            "current_user",
+            "db",
+            "auth"
+          ],
+          "exported": true,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "RolesBasedAuthChecker",
+            "get_current_user"
+          ]
+        },
+        {
+          "source": "apis.menu",
+          "specifiers": [
+            "schemas",
+            "utils"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "User",
+            "UserRole"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Depends"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        },
+        {
+          "source": "typing_extensions",
+          "specifiers": [
+            "Annotated"
+          ]
+        }
+      ],
+      "exports": [
+        "update_menu_item"
+      ],
+      "totalLines": 22,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/menu/utils.py": {
+      "filePath": "app/apis/menu/utils.py",
+      "contentHash": "9b56474ee96a145b4d0ab7aba5946565c21bb4a5f73b290e12351d313535f834",
+      "functions": [
+        {
+          "name": "_image_url_to_base64",
+          "params": [
+            "image_url"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "create_menu_item",
+          "params": [
+            "db",
+            "menu_item"
+          ],
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "update_menu_item",
+          "params": [
+            "db",
+            "item_id",
+            "menu_item"
+          ],
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "delete_menu_item",
+          "params": [
+            "db",
+            "item_id"
+          ],
+          "exported": true,
+          "lineCount": 16
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "base64",
+          "specifiers": [
+            "base64"
+          ]
+        },
+        {
+          "source": "requests",
+          "specifiers": [
+            "requests"
+          ]
+        },
+        {
+          "source": "apis.menu",
+          "specifiers": [
+            "schemas"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "MenuItem",
+            "OrderItem"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "HTTPException"
+          ]
+        }
+      ],
+      "exports": [
+        "_image_url_to_base64",
+        "create_menu_item",
+        "update_menu_item",
+        "delete_menu_item"
+      ],
+      "totalLines": 74,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/orders/schemas.py": {
+      "filePath": "app/apis/orders/schemas.py",
+      "contentHash": "41b3afbe7a4d9f827543035f8a432772bc464d217361e100c44a5e8fe3ccf952",
+      "functions": [],
+      "classes": [
+        {
+          "name": "OrderStatus",
+          "methods": [],
+          "properties": [],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "OrderItem",
+          "methods": [],
+          "properties": [
+            "menu_item_id",
+            "quantity"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "OrderBase",
+          "methods": [],
+          "properties": [
+            "delivery_address",
+            "phone_number"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "OrderCreate",
+          "methods": [],
+          "properties": [
+            "items",
+            "coupon_id"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "Order",
+          "methods": [],
+          "properties": [
+            "id",
+            "user_id",
+            "items",
+            "status",
+            "final_price"
+          ],
+          "exported": true,
+          "lineCount": 9
+        }
+      ],
+      "imports": [
+        {
+          "source": "enum",
+          "specifiers": [
+            "Enum"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "List",
+            "Optional"
+          ]
+        },
+        {
+          "source": "pydantic",
+          "specifiers": [
+            "BaseModel"
+          ]
+        }
+      ],
+      "exports": [
+        "OrderStatus",
+        "OrderItem",
+        "OrderBase",
+        "OrderCreate",
+        "Order"
+      ],
+      "totalLines": 39,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/orders/service.py": {
+      "filePath": "app/apis/orders/service.py",
+      "contentHash": "96718ebde6f74cddf026e07f744af9078b7fc031397f4ce15ea8300b0d2b4e24",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "apis.orders.services.create_order_service",
+          "specifiers": [
+            "create_order_router"
+          ]
+        },
+        {
+          "source": "apis.orders.services.get_order_service",
+          "specifiers": [
+            "get_order_router"
+          ]
+        },
+        {
+          "source": "apis.orders.services.get_order_status",
+          "specifiers": [
+            "get_order_status_router"
+          ]
+        },
+        {
+          "source": "apis.orders.services.get_orders_for_delivery_service",
+          "specifiers": [
+            "get_orders_for_delivery_router"
+          ]
+        },
+        {
+          "source": "apis.orders.services.get_orders_service",
+          "specifiers": [
+            "get_orders_router"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/orders/services/create_order_service.py": {
+      "filePath": "app/apis/orders/services/create_order_service.py",
+      "contentHash": "6cdeb4097a2f249b13891998559d2ba1084e018f69be2f026212908bc2886a15",
+      "functions": [
+        {
+          "name": "create_order",
+          "params": [
+            "order",
+            "current_user",
+            "db",
+            "auth"
+          ],
+          "exported": true,
+          "lineCount": 74
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "datetime",
+          "specifiers": [
+            "datetime"
+          ]
+        },
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "RolesBasedAuthChecker",
+            "get_current_user"
+          ]
+        },
+        {
+          "source": "apis.orders",
+          "specifiers": [
+            "schemas"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "DiscountCoupon",
+            "MenuItem",
+            "Order",
+            "OrderItem",
+            "User",
+            "UserRole"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Depends",
+            "HTTPException",
+            "status"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        },
+        {
+          "source": "typing_extensions",
+          "specifiers": [
+            "Annotated"
+          ]
+        }
+      ],
+      "exports": [
+        "create_order"
+      ],
+      "totalLines": 91,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/orders/services/get_order_service.py": {
+      "filePath": "app/apis/orders/services/get_order_service.py",
+      "contentHash": "aa40ce18e360d3e5678c2123f02734692f20987c5c60508dec1905f64c1d480a",
+      "functions": [
+        {
+          "name": "get_order",
+          "params": [
+            "order_id",
+            "db",
+            "auth"
+          ],
+          "exported": true,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "RolesBasedAuthChecker"
+          ]
+        },
+        {
+          "source": "apis.orders",
+          "specifiers": [
+            "schemas"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "Order",
+            "UserRole"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Depends",
+            "HTTPException"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        }
+      ],
+      "exports": [
+        "get_order"
+      ],
+      "totalLines": 21,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/orders/services/get_order_status.py": {
+      "filePath": "app/apis/orders/services/get_order_status.py",
+      "contentHash": "2b94152cf330e53cde1fcb8f7bdba36b6c67cb142542dbb6d3ec5a938bb0bfe9",
+      "functions": [
+        {
+          "name": "get_order_status",
+          "params": [
+            "order_id",
+            "current_user",
+            "db"
+          ],
+          "exported": true,
+          "lineCount": 28
+        }
+      ],
+      "classes": [
+        {
+          "name": "OrderStatusResponse",
+          "methods": [],
+          "properties": [
+            "status",
+            "order_id"
+          ],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "imports": [
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "get_current_user"
+          ]
+        },
+        {
+          "source": "apis.orders.utils",
+          "specifiers": [
+            "fetch_order_status_from_delivery_service"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "Order",
+            "OrderStatus",
+            "User"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Depends",
+            "HTTPException"
+          ]
+        },
+        {
+          "source": "pydantic",
+          "specifiers": [
+            "BaseModel"
+          ]
+        },
+        {
+          "source": "sqlalchemy",
+          "specifiers": [
+            "text"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        },
+        {
+          "source": "typing_extensions",
+          "specifiers": [
+            "Annotated"
+          ]
+        }
+      ],
+      "exports": [
+        "OrderStatusResponse",
+        "get_order_status"
+      ],
+      "totalLines": 48,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/orders/services/get_orders_for_delivery_service.py": {
+      "filePath": "app/apis/orders/services/get_orders_for_delivery_service.py",
+      "contentHash": "8f2e81a0eaec941b58f3c45adb2eedaf31652ce38ac2d9b5406462b8ceaf2aa7",
+      "functions": [
+        {
+          "name": "get_orders",
+          "params": [
+            "skip",
+            "limit",
+            "db"
+          ],
+          "exported": true,
+          "lineCount": 18
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "typing",
+          "specifiers": [
+            "List"
+          ]
+        },
+        {
+          "source": "apis.orders",
+          "specifiers": [
+            "schemas"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "Order"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Depends",
+            "Request"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        }
+      ],
+      "exports": [
+        "get_orders"
+      ],
+      "totalLines": 37,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/orders/services/get_orders_service.py": {
+      "filePath": "app/apis/orders/services/get_orders_service.py",
+      "contentHash": "12ef31210c571eebc20767a084fcd569cce4e8c38bbc5ea901c65e4f9b5e465e",
+      "functions": [
+        {
+          "name": "get_orders",
+          "params": [
+            "current_user",
+            "skip",
+            "limit",
+            "db",
+            "auth"
+          ],
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "typing",
+          "specifiers": [
+            "List"
+          ]
+        },
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "RolesBasedAuthChecker",
+            "get_current_user"
+          ]
+        },
+        {
+          "source": "apis.orders",
+          "specifiers": [
+            "schemas"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "Order",
+            "User",
+            "UserRole"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Depends"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        },
+        {
+          "source": "typing_extensions",
+          "specifiers": [
+            "Annotated"
+          ]
+        }
+      ],
+      "exports": [
+        "get_orders"
+      ],
+      "totalLines": 30,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/orders/utils.py": {
+      "filePath": "app/apis/orders/utils.py",
+      "contentHash": "3204aeddad8ad61c89b28b95f79bc15cdd509f63ab2147fdfa70e74aa410b9c3",
+      "functions": [
+        {
+          "name": "fetch_order_status_from_delivery_service",
+          "params": [
+            "order_id"
+          ],
+          "exported": true,
+          "lineCount": 16
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "HTTPException"
+          ]
+        }
+      ],
+      "exports": [
+        "fetch_order_status_from_delivery_service"
+      ],
+      "totalLines": 20,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/referrals/schemas.py": {
+      "filePath": "app/apis/referrals/schemas.py",
+      "contentHash": "1f601a98d3b209e4f6b8830e0d4d2841d33c8f1ba588bd0fc48fb02c68c25d59",
+      "functions": [],
+      "classes": [
+        {
+          "name": "DiscountCouponRead",
+          "methods": [],
+          "properties": [
+            "id",
+            "discount_percentage",
+            "used",
+            "created_at",
+            "used_at"
+          ],
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "imports": [
+        {
+          "source": "datetime",
+          "specifiers": [
+            "datetime"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Optional"
+          ]
+        },
+        {
+          "source": "pydantic",
+          "specifiers": [
+            "BaseModel"
+          ]
+        }
+      ],
+      "exports": [
+        "DiscountCouponRead"
+      ],
+      "totalLines": 13,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/referrals/service.py": {
+      "filePath": "app/apis/referrals/service.py",
+      "contentHash": "178ee78a7af80b8c2c7d6cdb792171e9f102fbf5c91a2574f0be1824c7bc7505",
+      "functions": [
+        {
+          "name": "get_referral_code_endpoint",
+          "params": [
+            "current_user",
+            "db"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "apply_referral_code",
+          "params": [
+            "request",
+            "current_user",
+            "db"
+          ],
+          "exported": true,
+          "lineCount": 27
+        },
+        {
+          "name": "get_discount_coupons",
+          "params": [
+            "current_user",
+            "db"
+          ],
+          "exported": true,
+          "lineCount": 9
+        }
+      ],
+      "classes": [
+        {
+          "name": "ReferralCodeResponse",
+          "methods": [],
+          "properties": [
+            "code"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "ApplyReferralRequest",
+          "methods": [],
+          "properties": [
+            "referral_code"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "ApplyReferralResponse",
+          "methods": [],
+          "properties": [
+            "message",
+            "discount"
+          ],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "imports": [
+        {
+          "source": "typing",
+          "specifiers": [
+            "List"
+          ]
+        },
+        {
+          "source": "apis.auth.schemas",
+          "specifiers": [
+            "User"
+          ]
+        },
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "get_current_user"
+          ]
+        },
+        {
+          "source": "apis.referrals.schemas",
+          "specifiers": [
+            "DiscountCouponRead"
+          ]
+        },
+        {
+          "source": "apis.referrals.utils",
+          "specifiers": [
+            "get_referral_code"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "DiscountCoupon"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "UserModel"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Depends"
+          ]
+        },
+        {
+          "source": "pydantic",
+          "specifiers": [
+            "BaseModel"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        },
+        {
+          "source": "typing_extensions",
+          "specifiers": [
+            "Annotated"
+          ]
+        }
+      ],
+      "exports": [
+        "ReferralCodeResponse",
+        "ApplyReferralRequest",
+        "ApplyReferralResponse",
+        "get_referral_code_endpoint",
+        "apply_referral_code",
+        "get_discount_coupons"
+      ],
+      "totalLines": 87,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/referrals/utils.py": {
+      "filePath": "app/apis/referrals/utils.py",
+      "contentHash": "9f917b686e35f8266d9daf593693032bf8db1c1db4c6b2a06464a73fa2cd5176",
+      "functions": [
+        {
+          "name": "_generate_code",
+          "params": [],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "get_referral_code",
+          "params": [
+            "db",
+            "db_user"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "random",
+          "specifiers": [
+            "random"
+          ]
+        },
+        {
+          "source": "string",
+          "specifiers": [
+            "string"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "User"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        }
+      ],
+      "exports": [
+        "_generate_code",
+        "get_referral_code"
+      ],
+      "totalLines": 23,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/router.py": {
+      "filePath": "app/apis/router.py",
+      "contentHash": "2e9914c9347f7bb86ab46bd5c21bd13e679d31195c84788cf6406700391d9e9b",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "apis.admin.service",
+          "specifiers": [
+            "admin_router"
+          ]
+        },
+        {
+          "source": "apis.auth.service",
+          "specifiers": [
+            "auth_router"
+          ]
+        },
+        {
+          "source": "apis.debug.service",
+          "specifiers": [
+            "debug_router"
+          ]
+        },
+        {
+          "source": "apis.healthcheck.service",
+          "specifiers": [
+            "healthcheck_router"
+          ]
+        },
+        {
+          "source": "apis.menu.service",
+          "specifiers": [
+            "menu_router"
+          ]
+        },
+        {
+          "source": "apis.orders.service",
+          "specifiers": [
+            "orders_router"
+          ]
+        },
+        {
+          "source": "apis.referrals.service",
+          "specifiers": [
+            "referrals_router"
+          ]
+        },
+        {
+          "source": "apis.users.service",
+          "specifiers": [
+            "users_router"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "ENV",
+            "ENVIRONMENT"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 23,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/users/schemas.py": {
+      "filePath": "app/apis/users/schemas.py",
+      "contentHash": "db786b9997882955f8d80982488d51772797aa7d707276c50e21e0f0a8ab2594",
+      "functions": [],
+      "classes": [
+        {
+          "name": "UserRoleUpdate",
+          "methods": [],
+          "properties": [
+            "username",
+            "role"
+          ],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "imports": [
+        {
+          "source": "pydantic",
+          "specifiers": [
+            "BaseModel"
+          ]
+        }
+      ],
+      "exports": [
+        "UserRoleUpdate"
+      ],
+      "totalLines": 7,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/users/service.py": {
+      "filePath": "app/apis/users/service.py",
+      "contentHash": "3f67f9e85c389dd7e4927ed9261407999862697b7d51b016340689a08d2ed531",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "apis.users.services.update_user_role_service",
+          "specifiers": [
+            "update_user_role_router"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/users/services/update_user_role_service.py": {
+      "filePath": "app/apis/users/services/update_user_role_service.py",
+      "contentHash": "27ded78867576d61e29c029231a53d2a35bcec231ac08e0e56eb37d19cdf6d28",
+      "functions": [
+        {
+          "name": "update_user_role",
+          "params": [
+            "user",
+            "current_user",
+            "db"
+          ],
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "RolesBasedAuthChecker",
+            "get_current_user",
+            "update_user"
+          ]
+        },
+        {
+          "source": "apis.users.schemas",
+          "specifiers": [
+            "UserRoleUpdate"
+          ]
+        },
+        {
+          "source": "db",
+          "specifiers": [
+            "models"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "APIRouter",
+            "Depends",
+            "HTTPException",
+            "status"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        },
+        {
+          "source": "typing_extensions",
+          "specifiers": [
+            "Annotated"
+          ]
+        }
+      ],
+      "exports": [
+        "update_user_role"
+      ],
+      "totalLines": 28,
+      "hasStructuralAnalysis": true
+    },
+    "app/apis/users/utils.py": {
+      "filePath": "app/apis/users/utils.py",
+      "contentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": true
+    },
+    "app/config.py": {
+      "filePath": "app/config.py",
+      "contentHash": "cab72376a79f76d3811930bc94d0598a7f73edbc486f75c668827c96b83f8ab5",
+      "functions": [
+        {
+          "name": "generate_random_secret",
+          "params": [],
+          "exported": true,
+          "lineCount": 2
+        }
+      ],
+      "classes": [
+        {
+          "name": "ENV",
+          "methods": [],
+          "properties": [],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "Settings",
+          "methods": [
+            "DATABASE_URL",
+            "SERVER_URL",
+            "SERVERS",
+            "ROOT_PATH",
+            "SERVER_DESCRIPTION"
+          ],
+          "properties": [
+            "POSTGRES_USER",
+            "POSTGRES_SERVER",
+            "POSTGRES_PORT",
+            "POSTGRES_DB",
+            "TITLE",
+            "DESCRIPTION",
+            "VERSION",
+            "DB_BACKEND"
+          ],
+          "exported": true,
+          "lineCount": 46
+        }
+      ],
+      "imports": [
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "random",
+          "specifiers": [
+            "random"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Optional"
+          ]
+        },
+        {
+          "source": "dotenv",
+          "specifiers": [
+            "load_dotenv"
+          ]
+        },
+        {
+          "source": "enum",
+          "specifiers": [
+            "Enum"
+          ]
+        }
+      ],
+      "exports": [
+        "ENV",
+        "generate_random_secret",
+        "Settings"
+      ],
+      "totalLines": 77,
+      "hasStructuralAnalysis": true
+    },
+    "app/db/base.py": {
+      "filePath": "app/db/base.py",
+      "contentHash": "3fddbe35e3f71c5ab77899b9b7cea4b3ed42604cd073c67a270359cafe22192b",
+      "functions": [],
+      "classes": [
+        {
+          "name": "Base",
+          "methods": [
+            "__tablename__"
+          ],
+          "properties": [
+            "id",
+            "__name__"
+          ],
+          "exported": true,
+          "lineCount": 8
+        }
+      ],
+      "imports": [
+        {
+          "source": "typing",
+          "specifiers": [
+            "Any"
+          ]
+        },
+        {
+          "source": "sqlalchemy.ext.declarative",
+          "specifiers": [
+            "as_declarative",
+            "declared_attr"
+          ]
+        }
+      ],
+      "exports": [
+        "Base"
+      ],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "app/db/models.py": {
+      "filePath": "app/db/models.py",
+      "contentHash": "ae7938fd89f13153d8ba9d6b9aca19cf28fed60a1239282ffbdbc2a2e834e2dc",
+      "functions": [],
+      "classes": [
+        {
+          "name": "UserRole",
+          "methods": [],
+          "properties": [],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "OrderStatus",
+          "methods": [],
+          "properties": [],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "User",
+          "methods": [],
+          "properties": [],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "MenuItem",
+          "methods": [],
+          "properties": [],
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "Order",
+          "methods": [],
+          "properties": [],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "OrderItem",
+          "methods": [],
+          "properties": [],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "DiscountCoupon",
+          "methods": [],
+          "properties": [],
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "imports": [
+        {
+          "source": "datetime",
+          "specifiers": [
+            "datetime"
+          ]
+        },
+        {
+          "source": "enum",
+          "specifiers": [
+            "enum"
+          ]
+        },
+        {
+          "source": "db.base",
+          "specifiers": [
+            "Base"
+          ]
+        },
+        {
+          "source": "sqlalchemy",
+          "specifiers": [
+            "Boolean",
+            "Column",
+            "DateTime",
+            "Enum",
+            "Float",
+            "ForeignKey",
+            "Integer",
+            "String",
+            "Text"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "relationship"
+          ]
+        }
+      ],
+      "exports": [
+        "UserRole",
+        "OrderStatus",
+        "User",
+        "MenuItem",
+        "Order",
+        "OrderItem",
+        "DiscountCoupon"
+      ],
+      "totalLines": 104,
+      "hasStructuralAnalysis": true
+    },
+    "app/db/schemas.py": {
+      "filePath": "app/db/schemas.py",
+      "contentHash": "cd96e9e9c1da1463c01f68809d8aae16de19819d0330250ff0e54a63dd1037d9",
+      "functions": [],
+      "classes": [
+        {
+          "name": "UserRole",
+          "methods": [],
+          "properties": [],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "OrderStatus",
+          "methods": [],
+          "properties": [],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "UserBase",
+          "methods": [],
+          "properties": [
+            "username",
+            "role",
+            "first_name",
+            "last_name",
+            "phone_number"
+          ],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "UserCreate",
+          "methods": [],
+          "properties": [
+            "password"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "User",
+          "methods": [],
+          "properties": [
+            "id"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "MenuItemBase",
+          "methods": [],
+          "properties": [
+            "name",
+            "description",
+            "price",
+            "image_base64"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "MenuItemCreate",
+          "methods": [],
+          "properties": [],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "MenuItem",
+          "methods": [],
+          "properties": [
+            "id"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "OrderItemBase",
+          "methods": [],
+          "properties": [
+            "menu_item_id",
+            "quantity"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "OrderItemCreate",
+          "methods": [],
+          "properties": [],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "OrderItem",
+          "methods": [],
+          "properties": [
+            "id",
+            "order_id"
+          ],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "OrderBase",
+          "methods": [],
+          "properties": [
+            "date_ordered",
+            "status",
+            "delivery_address",
+            "phone_number"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "OrderCreate",
+          "methods": [],
+          "properties": [
+            "items"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "Order",
+          "methods": [],
+          "properties": [
+            "id",
+            "user_id",
+            "items"
+          ],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "imports": [
+        {
+          "source": "datetime",
+          "specifiers": [
+            "datetime"
+          ]
+        },
+        {
+          "source": "enum",
+          "specifiers": [
+            "Enum"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "List",
+            "Optional"
+          ]
+        },
+        {
+          "source": "pydantic",
+          "specifiers": [
+            "BaseModel"
+          ]
+        }
+      ],
+      "exports": [
+        "UserRole",
+        "OrderStatus",
+        "UserBase",
+        "UserCreate",
+        "User",
+        "MenuItemBase",
+        "MenuItemCreate",
+        "MenuItem",
+        "OrderItemBase",
+        "OrderItemCreate",
+        "OrderItem",
+        "OrderBase",
+        "OrderCreate",
+        "Order"
+      ],
+      "totalLines": 95,
+      "hasStructuralAnalysis": true
+    },
+    "app/db/session.py": {
+      "filePath": "app/db/session.py",
+      "contentHash": "215475e6acebf704187d1dc8bda64ef24ae12586b220059d121246bc64998872",
+      "functions": [
+        {
+          "name": "_create_engine_and_session",
+          "params": [],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "get_db",
+          "params": [],
+          "returnType": "Generator",
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "typing",
+          "specifiers": [
+            "Generator"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "settings"
+          ]
+        },
+        {
+          "source": "sqlalchemy",
+          "specifiers": [
+            "create_engine"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "sessionmaker"
+          ]
+        },
+        {
+          "source": "sqlalchemy.pool",
+          "specifiers": [
+            "StaticPool"
+          ]
+        }
+      ],
+      "exports": [
+        "_create_engine_and_session",
+        "get_db"
+      ],
+      "totalLines": 37,
+      "hasStructuralAnalysis": true
+    },
+    "app/game.py": {
+      "filePath": "app/game.py",
+      "contentHash": "d554cf863c593e5b0ae3db8e8d137a6aa75f70bb2f9d8b8d4ea4b923b223b183",
+      "functions": [
+        {
+          "name": "run_tests",
+          "params": [
+            "test_file_path"
+          ],
+          "exported": true,
+          "lineCount": 35
+        },
+        {
+          "name": "is_vulnerability_fixed",
+          "params": [
+            "test_file_path"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "get_unit_tests_suite_result",
+          "params": [],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "get_vuln_name",
+          "params": [
+            "test_file_path"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "get_level_number",
+          "params": [
+            "test_file_path"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "get_level_title",
+          "params": [
+            "test_file_path"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "print_level_description",
+          "params": [
+            "test_file_path"
+          ],
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "print_welcome_screen",
+          "params": [],
+          "exported": true,
+          "lineCount": 27
+        },
+        {
+          "name": "print_congrats_screen",
+          "params": [],
+          "exported": true,
+          "lineCount": 26
+        },
+        {
+          "name": "press_key_to_continue",
+          "params": [
+            "text",
+            "color",
+            "end"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "print_color_text",
+          "params": [
+            "text",
+            "color",
+            "end"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "move_cursor_top",
+          "params": [
+            "lines"
+          ],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "ast",
+          "specifiers": [
+            "ast"
+          ]
+        },
+        {
+          "source": "subprocess",
+          "specifiers": [
+            "subprocess"
+          ]
+        },
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "os",
+          "specifiers": [
+            "listdir"
+          ]
+        },
+        {
+          "source": "os.path",
+          "specifiers": [
+            "isfile",
+            "join"
+          ]
+        },
+        {
+          "source": "colorama",
+          "specifiers": [
+            "Fore",
+            "Style"
+          ]
+        }
+      ],
+      "exports": [
+        "run_tests",
+        "is_vulnerability_fixed",
+        "get_unit_tests_suite_result",
+        "get_vuln_name",
+        "get_level_number",
+        "get_level_title",
+        "print_level_description",
+        "print_welcome_screen",
+        "print_congrats_screen",
+        "press_key_to_continue",
+        "print_color_text",
+        "move_cursor_top"
+      ],
+      "totalLines": 311,
+      "hasStructuralAnalysis": true
+    },
+    "app/init_app.py": {
+      "filePath": "app/init_app.py",
+      "contentHash": "e82d7019df001dda1d84e5632c5ffca725ef1bb1e73a6b7612c607345a47a7e1",
+      "functions": [
+        {
+          "name": "init_app",
+          "params": [],
+          "exported": true,
+          "lineCount": 23
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "apis.router",
+          "specifiers": [
+            "api_router"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "settings"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "FastAPI"
+          ]
+        },
+        {
+          "source": "fastapi.middleware.cors",
+          "specifiers": [
+            "CORSMiddleware"
+          ]
+        },
+        {
+          "source": "rate_limiting",
+          "specifiers": [
+            "limiter"
+          ]
+        },
+        {
+          "source": "slowapi",
+          "specifiers": [
+            "_rate_limit_exceeded_handler"
+          ]
+        },
+        {
+          "source": "slowapi.errors",
+          "specifiers": [
+            "RateLimitExceeded"
+          ]
+        }
+      ],
+      "exports": [
+        "init_app"
+      ],
+      "totalLines": 33,
+      "hasStructuralAnalysis": true
+    },
+    "app/init.py": {
+      "filePath": "app/init.py",
+      "contentHash": "dd7470e75f70345dd92a1ad303390c3ac666964574fd183d147b65ffc75d0f7f",
+      "functions": [
+        {
+          "name": "generate_random_secret",
+          "params": [],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "load_users",
+          "params": [
+            "db"
+          ],
+          "exported": true,
+          "lineCount": 55
+        },
+        {
+          "name": "load_menu",
+          "params": [
+            "db"
+          ],
+          "exported": true,
+          "lineCount": 135
+        },
+        {
+          "name": "load_orders",
+          "params": [
+            "db"
+          ],
+          "exported": true,
+          "lineCount": 124
+        },
+        {
+          "name": "load_initial_data",
+          "params": [],
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "secrets",
+          "specifiers": [
+            "secrets"
+          ]
+        },
+        {
+          "source": "string",
+          "specifiers": [
+            "string"
+          ]
+        },
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "create_user_if_not_exists"
+          ]
+        },
+        {
+          "source": "apis.menu.schemas",
+          "specifiers": [
+            "MenuItemCreate"
+          ]
+        },
+        {
+          "source": "apis.menu.utils",
+          "specifiers": [
+            "create_menu_item"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "settings"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "MenuItem",
+            "Order",
+            "OrderItem",
+            "OrderStatus",
+            "User",
+            "UserRole"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "Session"
+          ]
+        }
+      ],
+      "exports": [
+        "generate_random_secret",
+        "load_users",
+        "load_menu",
+        "load_orders",
+        "load_initial_data"
+      ],
+      "totalLines": 352,
+      "hasStructuralAnalysis": true
+    },
+    "app/main.py": {
+      "filePath": "app/main.py",
+      "contentHash": "d520db6e95d9b299092881d40761f4a71a7fba807711a1b8b1d041185ba1b817",
+      "functions": [
+        {
+          "name": "setup_static_files_and_docs",
+          "params": [
+            "app"
+          ],
+          "exported": true,
+          "lineCount": 27
+        },
+        {
+          "name": "start_application",
+          "params": [],
+          "exported": true,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "config",
+          "specifiers": [
+            "settings"
+          ]
+        },
+        {
+          "source": "db.base",
+          "specifiers": [
+            "Base"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "engine"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "FastAPI"
+          ]
+        },
+        {
+          "source": "fastapi.openapi.docs",
+          "specifiers": [
+            "get_redoc_html",
+            "get_swagger_ui_html"
+          ]
+        },
+        {
+          "source": "fastapi.staticfiles",
+          "specifiers": [
+            "StaticFiles"
+          ]
+        },
+        {
+          "source": "init",
+          "specifiers": [
+            "load_initial_data"
+          ]
+        },
+        {
+          "source": "init_app",
+          "specifiers": [
+            "init_app"
+          ]
+        }
+      ],
+      "exports": [
+        "setup_static_files_and_docs",
+        "start_application"
+      ],
+      "totalLines": 51,
+      "hasStructuralAnalysis": true
+    },
+    "app/migrations/env.py": {
+      "filePath": "app/migrations/env.py",
+      "contentHash": "5e1e06147f39fac3731b38282675b2ffc3e01d7778a5eace91247c3759e171d3",
+      "functions": [
+        {
+          "name": "run_migrations_offline",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "run_migrations_online",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 18
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "logging.config",
+          "specifiers": [
+            "fileConfig"
+          ]
+        },
+        {
+          "source": "alembic",
+          "specifiers": [
+            "context"
+          ]
+        },
+        {
+          "source": "config",
+          "specifiers": [
+            "settings"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "Base"
+          ]
+        },
+        {
+          "source": "sqlalchemy",
+          "specifiers": [
+            "engine_from_config",
+            "pool"
+          ]
+        }
+      ],
+      "exports": [
+        "run_migrations_offline",
+        "run_migrations_online"
+      ],
+      "totalLines": 82,
+      "hasStructuralAnalysis": true
+    },
+    "app/migrations/README": {
+      "filePath": "app/migrations/README",
+      "contentHash": "31595cf53626af9ed16e15c44fa43183209cc163fbc3ebcb904b22ac436a8884",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "app/migrations/script.py.mako": {
+      "filePath": "app/migrations/script.py.mako",
+      "contentHash": "304a8bfb6a804e5493f5300e79882c70c9f5bb2e87512f4d16f0e097dddd323f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 27,
+      "hasStructuralAnalysis": false
+    },
+    "app/migrations/versions/4a8c6c4dc451_added_reset_password_fields.py": {
+      "filePath": "app/migrations/versions/4a8c6c4dc451_added_reset_password_fields.py",
+      "contentHash": "892ce6f31acf2456d1945c6ae0a9e95623a807715a1a4b442922594617e0d3a3",
+      "functions": [
+        {
+          "name": "upgrade",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "downgrade",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "typing",
+          "specifiers": [
+            "Sequence",
+            "Union"
+          ]
+        },
+        {
+          "source": "sqlalchemy",
+          "specifiers": [
+            "sa"
+          ]
+        },
+        {
+          "source": "alembic",
+          "specifiers": [
+            "op"
+          ]
+        }
+      ],
+      "exports": [
+        "upgrade",
+        "downgrade"
+      ],
+      "totalLines": 35,
+      "hasStructuralAnalysis": true
+    },
+    "app/migrations/versions/e2470973db23_initial_migrations.py": {
+      "filePath": "app/migrations/versions/e2470973db23_initial_migrations.py",
+      "contentHash": "3913190ba5279b36084a38ebdf3c5d519789c5a52c37d79c7498b9bc544dca68",
+      "functions": [
+        {
+          "name": "upgrade",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 76
+        },
+        {
+          "name": "downgrade",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "typing",
+          "specifiers": [
+            "Sequence",
+            "Union"
+          ]
+        },
+        {
+          "source": "sqlalchemy",
+          "specifiers": [
+            "sa"
+          ]
+        },
+        {
+          "source": "alembic",
+          "specifiers": [
+            "op"
+          ]
+        }
+      ],
+      "exports": [
+        "upgrade",
+        "downgrade"
+      ],
+      "totalLines": 111,
+      "hasStructuralAnalysis": true
+    },
+    "app/migrations/versions/f23331e973f8_added_referrals.py": {
+      "filePath": "app/migrations/versions/f23331e973f8_added_referrals.py",
+      "contentHash": "411e98aad3f25a6c10b42d7e5068c1300b1e0d66ea02567521409b0aebb60850",
+      "functions": [
+        {
+          "name": "upgrade",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 42
+        },
+        {
+          "name": "downgrade",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "typing",
+          "specifiers": [
+            "Sequence",
+            "Union"
+          ]
+        },
+        {
+          "source": "sqlalchemy",
+          "specifiers": [
+            "sa"
+          ]
+        },
+        {
+          "source": "alembic",
+          "specifiers": [
+            "op"
+          ]
+        }
+      ],
+      "exports": [
+        "upgrade",
+        "downgrade"
+      ],
+      "totalLines": 76,
+      "hasStructuralAnalysis": true
+    },
+    "app/rate_limiting.py": {
+      "filePath": "app/rate_limiting.py",
+      "contentHash": "90968233198956874a2ce971beccb2dba0d4a1b27063b3ce9b4be02b01bb7a9e",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "slowapi",
+          "specifiers": [
+            "Limiter"
+          ]
+        },
+        {
+          "source": "slowapi.util",
+          "specifiers": [
+            "get_remote_address"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 5,
+      "hasStructuralAnalysis": true
+    },
+    "app/tests/conftest.py": {
+      "filePath": "app/tests/conftest.py",
+      "contentHash": "68ff27687338ab328cec4d8079e0584d90971446079d0a60fa3afa5d763f08db",
+      "functions": [
+        {
+          "name": "override_get_db",
+          "params": [],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "app",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "test_db",
+          "params": [],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "anon_client",
+          "params": [
+            "app",
+            "test_db"
+          ],
+          "returnType": "Generator[TestClient, Any, None]",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "customer_client",
+          "params": [
+            "app",
+            "test_db"
+          ],
+          "returnType": "Generator[TestClient, Any, None]",
+          "exported": true,
+          "lineCount": 24
+        },
+        {
+          "name": "employee_client",
+          "params": [
+            "app",
+            "test_db"
+          ],
+          "returnType": "Generator[TestClient, Any, None]",
+          "exported": true,
+          "lineCount": 24
+        },
+        {
+          "name": "chef_client",
+          "params": [
+            "app",
+            "test_db"
+          ],
+          "returnType": "Generator[TestClient, Any, None]",
+          "exported": true,
+          "lineCount": 22
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Any",
+            "Generator"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "fastapi.testclient",
+          "specifiers": [
+            "TestClient"
+          ]
+        },
+        {
+          "source": "sqlalchemy",
+          "specifiers": [
+            "create_engine"
+          ]
+        },
+        {
+          "source": "sqlalchemy.orm",
+          "specifiers": [
+            "sessionmaker"
+          ]
+        },
+        {
+          "source": "sqlalchemy.pool",
+          "specifiers": [
+            "StaticPool"
+          ]
+        },
+        {
+          "source": "init_app",
+          "specifiers": [
+            "init_app"
+          ]
+        },
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "get_current_user",
+            "get_password_hash"
+          ]
+        },
+        {
+          "source": "apis.router",
+          "specifiers": [
+            "api_router"
+          ]
+        },
+        {
+          "source": "db.base",
+          "specifiers": [
+            "Base"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "User",
+            "UserRole"
+          ]
+        },
+        {
+          "source": "db.session",
+          "specifiers": [
+            "get_db"
+          ]
+        }
+      ],
+      "exports": [
+        "override_get_db",
+        "app",
+        "test_db",
+        "anon_client",
+        "customer_client",
+        "employee_client",
+        "chef_client"
+      ],
+      "totalLines": 149,
+      "hasStructuralAnalysis": true
+    },
+    "app/tests/modules/admin/test_admin_service.py": {
+      "filePath": "app/tests/modules/admin/test_admin_service.py",
+      "contentHash": "33554ce8d2e4c1cac56ddb3dc3fd5a51687168f6ef759af91cef0d984e4e34fc",
+      "functions": [
+        {
+          "name": "test_reset_chef_password_unauthorised_returns_403",
+          "params": [
+            "test_db",
+            "anon_client",
+            "mocker"
+          ],
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "test_reset_chef_password_from_localhost_returns_200",
+          "params": [
+            "test_db",
+            "anon_client",
+            "mocker"
+          ],
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "test_stats_disk_returns_output_with_200",
+          "params": [
+            "test_db",
+            "chef_client"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "test_stats_disk_unauthorised_returns_403",
+          "params": [
+            "test_db",
+            "anon_client",
+            "employee_client",
+            "customer_client"
+          ],
+          "exported": true,
+          "lineCount": 23
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "db.models",
+          "specifiers": [
+            "User",
+            "UserRole"
+          ]
+        }
+      ],
+      "exports": [
+        "test_reset_chef_password_unauthorised_returns_403",
+        "test_reset_chef_password_from_localhost_returns_200",
+        "test_stats_disk_returns_output_with_200",
+        "test_stats_disk_unauthorised_returns_403"
+      ],
+      "totalLines": 76,
+      "hasStructuralAnalysis": true
+    },
+    "app/tests/modules/auth/test_auth_service.py": {
+      "filePath": "app/tests/modules/auth/test_auth_service.py",
+      "contentHash": "541f590b122139106c40bcb04d62976e200fcb5eb48318f1afe164ae36307386",
+      "functions": [
+        {
+          "name": "test_get_token_returns_token_with_200",
+          "params": [
+            "test_db",
+            "customer_client"
+          ],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "test_get_token_with_invalid_password_returns_token_with_401",
+          "params": [
+            "test_db",
+            "customer_client"
+          ],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "test_get_profile_authorised_returns_200",
+          "params": [
+            "test_db",
+            "customer_client"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "test_get_profile_unauthorised_returns_401",
+          "params": [
+            "test_db",
+            "anon_client"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_update_current_user_details_returns_200",
+          "params": [
+            "test_db",
+            "customer_client"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "test_patch_profile_returns_200",
+          "params": [
+            "test_db",
+            "customer_client"
+          ],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "test_register_user_returns_201",
+          "params": [
+            "test_db",
+            "anon_client"
+          ],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "test_register_by_authenticated_user_returns_400",
+          "params": [
+            "test_db",
+            "customer_client",
+            "mocker"
+          ],
+          "exported": true,
+          "lineCount": 29
+        },
+        {
+          "name": "test_reset_password_sets_reset_code_and_returns_200",
+          "params": [
+            "test_db",
+            "anon_client"
+          ],
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "test_reset_password_with_invalid_data_returns_400",
+          "params": [
+            "test_db",
+            "anon_client"
+          ],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "test_reset_password_for_non_customer_returns_400",
+          "params": [
+            "test_db",
+            "anon_client"
+          ],
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "test_set_new_password_returns_200",
+          "params": [
+            "test_db",
+            "anon_client"
+          ],
+          "exported": true,
+          "lineCount": 25
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "datetime",
+          "specifiers": [
+            "datetime",
+            "timedelta"
+          ]
+        },
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "verify_password"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "User",
+            "UserRole"
+          ]
+        }
+      ],
+      "exports": [
+        "test_get_token_returns_token_with_200",
+        "test_get_token_with_invalid_password_returns_token_with_401",
+        "test_get_profile_authorised_returns_200",
+        "test_get_profile_unauthorised_returns_401",
+        "test_update_current_user_details_returns_200",
+        "test_patch_profile_returns_200",
+        "test_register_user_returns_201",
+        "test_register_by_authenticated_user_returns_400",
+        "test_reset_password_sets_reset_code_and_returns_200",
+        "test_reset_password_with_invalid_data_returns_400",
+        "test_reset_password_for_non_customer_returns_400",
+        "test_set_new_password_returns_200"
+      ],
+      "totalLines": 221,
+      "hasStructuralAnalysis": true
+    },
+    "app/tests/modules/auth/test_roles_based_auth_checker.py": {
+      "filePath": "app/tests/modules/auth/test_roles_based_auth_checker.py",
+      "contentHash": "7c0e7057e2690235b001a8ba23ce65a7d4914b31ca5af35c1ae617712d35792d",
+      "functions": [
+        {
+          "name": "test_RolesBasedAuthChecker_should_raise_403_http_exception_if_user_does_not_have_required_role",
+          "params": [],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "test_RolesBasedAuthChecker_should_return_true_if_user_has_required_role",
+          "params": [],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "unittest.mock",
+          "specifiers": [
+            "MagicMock",
+            "patch"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "RolesBasedAuthChecker"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "User",
+            "UserRole"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "Depends",
+            "HTTPException"
+          ]
+        }
+      ],
+      "exports": [
+        "test_RolesBasedAuthChecker_should_raise_403_http_exception_if_user_does_not_have_required_role",
+        "test_RolesBasedAuthChecker_should_return_true_if_user_has_required_role"
+      ],
+      "totalLines": 31,
+      "hasStructuralAnalysis": true
+    },
+    "app/tests/modules/healthcheck/test_healthcheck_service.py": {
+      "filePath": "app/tests/modules/healthcheck/test_healthcheck_service.py",
+      "contentHash": "dcd6754cce99743e0e33e27d4e68218b5a448701b7100f0810c2a71224c77238",
+      "functions": [
+        {
+          "name": "test_healthcheck",
+          "params": [
+            "anon_client"
+          ],
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "test_healthcheck"
+      ],
+      "totalLines": 5,
+      "hasStructuralAnalysis": true
+    },
+    "app/tests/modules/menu/test_menu_service.py": {
+      "filePath": "app/tests/modules/menu/test_menu_service.py",
+      "contentHash": "3a5f319c1930f7045c15e0e32a0adce878758b5fd8b412409b82838c9d3a283b",
+      "functions": [
+        {
+          "name": "test_get_menu_returns_200_with_data",
+          "params": [
+            "test_db",
+            "anon_client"
+          ],
+          "exported": true,
+          "lineCount": 20
+        },
+        {
+          "name": "test_create_menu_item_by_employee_or_chef_returns_201",
+          "params": [
+            "test_db",
+            "employee_client",
+            "chef_client"
+          ],
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "test_delete_menu_item_by_employee_or_chef_should_return_204",
+          "params": [
+            "test_db",
+            "employee_client",
+            "chef_client"
+          ],
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "test_delete_menu_item_by_unauthenticated_user_should_return_401",
+          "params": [
+            "test_db",
+            "anon_client"
+          ],
+          "exported": true,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "MenuItem"
+          ]
+        }
+      ],
+      "exports": [
+        "test_get_menu_returns_200_with_data",
+        "test_create_menu_item_by_employee_or_chef_returns_201",
+        "test_delete_menu_item_by_employee_or_chef_should_return_204",
+        "test_delete_menu_item_by_unauthenticated_user_should_return_401"
+      ],
+      "totalLines": 85,
+      "hasStructuralAnalysis": true
+    },
+    "app/tests/modules/orders/test_orders_service.py": {
+      "filePath": "app/tests/modules/orders/test_orders_service.py",
+      "contentHash": "9b4937c5a71d278194bdf91bd8b49f5c61adbb449fe0e021c3e9a1bfcb06e13d",
+      "functions": [
+        {
+          "name": "test_create_order_succesfully_returns_201",
+          "params": [
+            "customer_client",
+            "test_db"
+          ],
+          "exported": true,
+          "lineCount": 27
+        },
+        {
+          "name": "test_create_order_with_invalid_menu_item_id_returns_404",
+          "params": [
+            "customer_client",
+            "test_db"
+          ],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "test_create_order_with_invalid_quantity_returns_422",
+          "params": [
+            "customer_client",
+            "test_db"
+          ],
+          "exported": true,
+          "lineCount": 20
+        },
+        {
+          "name": "test_create_order_unauthorised_returns_401",
+          "params": [
+            "anon_client"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_get_orders_returns_one_item_with_200",
+          "params": [
+            "customer_client",
+            "test_db"
+          ],
+          "exported": true,
+          "lineCount": 40
+        },
+        {
+          "name": "test_get_orders_empty_returns_empty_list_with_200",
+          "params": [
+            "customer_client"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "test_get_orders_unauthorised_returns_401",
+          "params": [
+            "anon_client"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_get_order_should_return_200_on_success",
+          "params": [
+            "customer_client",
+            "test_db"
+          ],
+          "exported": true,
+          "lineCount": 39
+        },
+        {
+          "name": "test_get_order_should_return_401_for_unauthenticated",
+          "params": [
+            "anon_client",
+            "test_db"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "test_get_order_not_exist_returns_404",
+          "params": [
+            "customer_client"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_create_order_with_multiple_items",
+          "params": [
+            "customer_client",
+            "test_db"
+          ],
+          "exported": true,
+          "lineCount": 35
+        },
+        {
+          "name": "test_list_multiple_orders",
+          "params": [
+            "customer_client",
+            "test_db"
+          ],
+          "exported": true,
+          "lineCount": 25
+        },
+        {
+          "name": "test_get_individual_orders",
+          "params": [
+            "customer_client",
+            "test_db"
+          ],
+          "exported": true,
+          "lineCount": 28
+        },
+        {
+          "name": "test_create_order_calculates_final_price_without_coupon",
+          "params": [
+            "customer_client",
+            "test_db"
+          ],
+          "exported": true,
+          "lineCount": 25
+        },
+        {
+          "name": "test_create_order_with_valid_coupon_applies_discount",
+          "params": [
+            "customer_client",
+            "test_db"
+          ],
+          "exported": true,
+          "lineCount": 38
+        },
+        {
+          "name": "test_create_order_with_coupon_marks_coupon_as_used",
+          "params": [
+            "customer_client",
+            "test_db"
+          ],
+          "exported": true,
+          "lineCount": 36
+        },
+        {
+          "name": "test_create_order_with_already_used_coupon_returns_400",
+          "params": [
+            "customer_client",
+            "test_db"
+          ],
+          "exported": true,
+          "lineCount": 29
+        },
+        {
+          "name": "test_create_order_with_coupon_not_belonging_to_user_returns_404",
+          "params": [
+            "customer_client",
+            "test_db"
+          ],
+          "exported": true,
+          "lineCount": 40
+        },
+        {
+          "name": "test_create_order_with_invalid_coupon_id_returns_404",
+          "params": [
+            "customer_client",
+            "test_db"
+          ],
+          "exported": true,
+          "lineCount": 19
+        },
+        {
+          "name": "test_create_order_with_multiple_items_calculates_total_price_correctly",
+          "params": [
+            "customer_client",
+            "test_db"
+          ],
+          "exported": true,
+          "lineCount": 37
+        },
+        {
+          "name": "test_create_order_with_multiple_items_and_coupon_applies_discount_to_total",
+          "params": [
+            "customer_client",
+            "test_db"
+          ],
+          "exported": true,
+          "lineCount": 48
+        },
+        {
+          "name": "test_get_order_status_returns_200_for_customer",
+          "params": [
+            "customer_client",
+            "test_db"
+          ],
+          "exported": true,
+          "lineCount": 33
+        },
+        {
+          "name": "test_get_order_status_returns_401_for_unauthenticated",
+          "params": [
+            "anon_client",
+            "test_db"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "test_get_order_status_customer_cannot_access_other_customers_order",
+          "params": [
+            "customer_client",
+            "test_db"
+          ],
+          "exported": true,
+          "lineCount": 50
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "get_password_hash"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "DiscountCoupon",
+            "MenuItem",
+            "Order",
+            "OrderItem",
+            "User",
+            "UserRole"
+          ]
+        },
+        {
+          "source": "fastapi",
+          "specifiers": [
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        "test_create_order_succesfully_returns_201",
+        "test_create_order_with_invalid_menu_item_id_returns_404",
+        "test_create_order_with_invalid_quantity_returns_422",
+        "test_create_order_unauthorised_returns_401",
+        "test_get_orders_returns_one_item_with_200",
+        "test_get_orders_empty_returns_empty_list_with_200",
+        "test_get_orders_unauthorised_returns_401",
+        "test_get_order_should_return_200_on_success",
+        "test_get_order_should_return_401_for_unauthenticated",
+        "test_get_order_not_exist_returns_404",
+        "test_create_order_with_multiple_items",
+        "test_list_multiple_orders",
+        "test_get_individual_orders",
+        "test_create_order_calculates_final_price_without_coupon",
+        "test_create_order_with_valid_coupon_applies_discount",
+        "test_create_order_with_coupon_marks_coupon_as_used",
+        "test_create_order_with_already_used_coupon_returns_400",
+        "test_create_order_with_coupon_not_belonging_to_user_returns_404",
+        "test_create_order_with_invalid_coupon_id_returns_404",
+        "test_create_order_with_multiple_items_calculates_total_price_correctly",
+        "test_create_order_with_multiple_items_and_coupon_applies_discount_to_total",
+        "test_get_order_status_returns_200_for_customer",
+        "test_get_order_status_returns_401_for_unauthenticated",
+        "test_get_order_status_customer_cannot_access_other_customers_order"
+      ],
+      "totalLines": 681,
+      "hasStructuralAnalysis": true
+    },
+    "app/tests/modules/referrals/__init__.py": {
+      "filePath": "app/tests/modules/referrals/__init__.py",
+      "contentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": true
+    },
+    "app/tests/modules/referrals/test_referral_service.py": {
+      "filePath": "app/tests/modules/referrals/test_referral_service.py",
+      "contentHash": "7efb859716315bb3c3c87b23b0fa6443c99480a0880fa67c0706f35662cfab10",
+      "functions": [
+        {
+          "name": "test_get_referral_code_should_return_200",
+          "params": [
+            "test_db",
+            "customer_client"
+          ],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "test_get_referral_code_should_return_same_code_on_second_call",
+          "params": [
+            "test_db",
+            "customer_client"
+          ],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "test_get_referral_code_unauthorised_should_return_401",
+          "params": [
+            "test_db",
+            "anon_client"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_apply_referral_code_should_return_200_for_valid_code",
+          "params": [
+            "test_db",
+            "customer_client"
+          ],
+          "exported": true,
+          "lineCount": 24
+        },
+        {
+          "name": "test_apply_referral_code_should_return_200_with_zero_discount_for_invalid_code",
+          "params": [
+            "test_db",
+            "customer_client"
+          ],
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "test_apply_referral_code_should_create_discount_coupon_for_valid_coupon",
+          "params": [
+            "test_db",
+            "customer_client"
+          ],
+          "exported": true,
+          "lineCount": 33
+        },
+        {
+          "name": "test_get_discount_coupons_should_return_200_with_coupons",
+          "params": [
+            "test_db",
+            "customer_client"
+          ],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "test_get_discount_coupons_should_return_user_coupons",
+          "params": [
+            "test_db",
+            "customer_client"
+          ],
+          "exported": true,
+          "lineCount": 28
+        },
+        {
+          "name": "test_get_discount_coupons_unauthorised_should_return_401",
+          "params": [
+            "test_db",
+            "anon_client"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_apply_referral_code_unauthorised_should_return_401",
+          "params": [
+            "test_db",
+            "anon_client"
+          ],
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "apis.auth.utils",
+          "specifiers": [
+            "get_password_hash"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "DiscountCoupon",
+            "User",
+            "UserRole"
+          ]
+        }
+      ],
+      "exports": [
+        "test_get_referral_code_should_return_200",
+        "test_get_referral_code_should_return_same_code_on_second_call",
+        "test_get_referral_code_unauthorised_should_return_401",
+        "test_apply_referral_code_should_return_200_for_valid_code",
+        "test_apply_referral_code_should_return_200_with_zero_discount_for_invalid_code",
+        "test_apply_referral_code_should_create_discount_coupon_for_valid_coupon",
+        "test_get_discount_coupons_should_return_200_with_coupons",
+        "test_get_discount_coupons_should_return_user_coupons",
+        "test_get_discount_coupons_unauthorised_should_return_401",
+        "test_apply_referral_code_unauthorised_should_return_401"
+      ],
+      "totalLines": 162,
+      "hasStructuralAnalysis": true
+    },
+    "app/tests/vulns/level_0_technology_details_exposed_via_http_header.py": {
+      "filePath": "app/tests/vulns/level_0_technology_details_exposed_via_http_header.py",
+      "contentHash": "62c1bbbe59c67979e6f1491dd8b1b8be9488d07fd39d5af5483bde37da33dc49",
+      "functions": [
+        {
+          "name": "test_technology_details_exposed_via_http_header",
+          "params": [
+            "anon_client"
+          ],
+          "exported": true,
+          "lineCount": 28
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "test_technology_details_exposed_via_http_header"
+      ],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "app/tests/vulns/level_1_unrestricted_menu_item_deletion.py": {
+      "filePath": "app/tests/vulns/level_1_unrestricted_menu_item_deletion.py",
+      "contentHash": "b7f2e36b073856530daa6085874a66a6f2db35e3d7eaadf7d5d9119432025c52",
+      "functions": [
+        {
+          "name": "test_unrestricted_menu_item_deletion",
+          "params": [
+            "test_db",
+            "customer_client"
+          ],
+          "exported": true,
+          "lineCount": 33
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "db.models",
+          "specifiers": [
+            "MenuItem"
+          ]
+        }
+      ],
+      "exports": [
+        "test_unrestricted_menu_item_deletion"
+      ],
+      "totalLines": 37,
+      "hasStructuralAnalysis": true
+    },
+    "app/tests/vulns/level_2_unrestricted_profile_update_IDOR.py": {
+      "filePath": "app/tests/vulns/level_2_unrestricted_profile_update_IDOR.py",
+      "contentHash": "e0c14ea9b9c0e07c47c17cbb628784e7f548f7d359c663dea7a17bb526b0c05e",
+      "functions": [
+        {
+          "name": "test_unrestricted_profile_update_idor",
+          "params": [
+            "test_db",
+            "customer_client"
+          ],
+          "exported": true,
+          "lineCount": 44
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "User",
+            "UserRole"
+          ]
+        }
+      ],
+      "exports": [
+        "test_unrestricted_profile_update_idor"
+      ],
+      "totalLines": 50,
+      "hasStructuralAnalysis": true
+    },
+    "app/tests/vulns/level_3_privilege_escalation.py": {
+      "filePath": "app/tests/vulns/level_3_privilege_escalation.py",
+      "contentHash": "0f17bbf32accb650f50212931ea39cb3a676f95a1e9bc76f5757648e76147bfd",
+      "functions": [
+        {
+          "name": "test_privilege_escalation",
+          "params": [
+            "test_db",
+            "customer_client"
+          ],
+          "exported": true,
+          "lineCount": 45
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "User",
+            "UserRole"
+          ]
+        }
+      ],
+      "exports": [
+        "test_privilege_escalation"
+      ],
+      "totalLines": 51,
+      "hasStructuralAnalysis": true
+    },
+    "app/tests/vulns/level_4_server_side_request_forgery.py": {
+      "filePath": "app/tests/vulns/level_4_server_side_request_forgery.py",
+      "contentHash": "2825e250c5fd8812b68aca0014f73cf7ffe9c97416963d1c3392796601ba38df",
+      "functions": [
+        {
+          "name": "test_ssrf",
+          "params": [
+            "test_db",
+            "employee_client",
+            "anon_client",
+            "requests_mock",
+            "mocker"
+          ],
+          "exported": true,
+          "lineCount": 81
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "base64",
+          "specifiers": [
+            "base64"
+          ]
+        },
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "db.models",
+          "specifiers": [
+            "User",
+            "UserRole"
+          ]
+        }
+      ],
+      "exports": [
+        "test_ssrf"
+      ],
+      "totalLines": 88,
+      "hasStructuralAnalysis": true
+    },
+    "app/tests/vulns/level_5_remote_code_execution.py": {
+      "filePath": "app/tests/vulns/level_5_remote_code_execution.py",
+      "contentHash": "07446c0b38ff2c3a04fb67f544179c6785511392e8c8e068e70225c1ad38c819",
+      "functions": [
+        {
+          "name": "test_rce",
+          "params": [
+            "test_db",
+            "chef_client"
+          ],
+          "exported": true,
+          "lineCount": 53
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "test_rce"
+      ],
+      "totalLines": 54,
+      "hasStructuralAnalysis": true
+    },
+    "CODE_OF_CONDUCT.md": {
+      "filePath": "CODE_OF_CONDUCT.md",
+      "contentHash": "c9b59f63a38ec268266b52b232181c1c4640c6469d8d0287c6c1a33babb84b2d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 74,
+      "hasStructuralAnalysis": true
+    },
+    "CONTRIBUTING.md": {
+      "filePath": "CONTRIBUTING.md",
+      "contentHash": "4b7618d881d7671f51d2c272ed537362eeaaf01c2fad50fa41738296a15ae1f7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 67,
+      "hasStructuralAnalysis": true
+    },
+    "docker-compose.yml": {
+      "filePath": "docker-compose.yml",
+      "contentHash": "6fb19f710499330e3cb4702ff8f1e7003b22747b8c68f9ecf2bdcdd6f9e37468",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 38,
+      "hasStructuralAnalysis": true
+    },
+    "Dockerfile": {
+      "filePath": "Dockerfile",
+      "contentHash": "34ab447a7f14db93c9a2200a8514b81938ac02fba1032a6a2801a5b9c885f898",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "HALL_OF_FAME.md": {
+      "filePath": "HALL_OF_FAME.md",
+      "contentHash": "e39cc5e5a97111c8d6f0a5d62d283294c62b1143cc660002ec5a102f13f21cb8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 44,
+      "hasStructuralAnalysis": true
+    },
+    "pyproject.toml": {
+      "filePath": "pyproject.toml",
+      "contentHash": "1aeed782ded09ad4c12381c48d0dcbb275b3ad76683a133029fa0d9fa5b04415",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 55,
+      "hasStructuralAnalysis": true
+    },
+    "README.md": {
+      "filePath": "README.md",
+      "contentHash": "42d9850d248f094905c8a5943437d89028719d145d56603e2d73bfe61dfdab95",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 119,
+      "hasStructuralAnalysis": true
+    },
+    "start_app.sh": {
+      "filePath": "start_app.sh",
+      "contentHash": "03752dc943a566eb823380c4266223f75d07f2b1a5ee19488719e93bba5093a6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 5,
+      "hasStructuralAnalysis": true
+    },
+    "start_game.sh": {
+      "filePath": "start_game.sh",
+      "contentHash": "0a63eb861096719095553a38dca43a1d6281641cfe69bfcc6974879b5afcb3ec",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 5,
+      "hasStructuralAnalysis": true
+    },
+    "stop_app.sh": {
+      "filePath": "stop_app.sh",
+      "contentHash": "5fccf82e8ba8161f0451fb9648e0622a7f0dcfea31979f66ab329fe47890a22d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 3,
+      "hasStructuralAnalysis": true
+    }
+  }
+}

@@ -1,0 +1,897 @@
+{
+  "name": "Damn Vulnerable RESTaurant",
+  "description": "An intentionally vulnerable FastAPI-based REST API service designed as an interactive training playground for developers, ethical hackers, and security engineers to identify, exploit, and fix API security vulnerabilities.",
+  "languages": [
+    "config",
+    "dockerfile",
+    "mako",
+    "markdown",
+    "python",
+    "shell",
+    "toml",
+    "unknown",
+    "yaml"
+  ],
+  "frameworks": [
+    "FastAPI",
+    "SQLAlchemy",
+    "Alembic",
+    "pytest",
+    "uvicorn",
+    "Docker",
+    "Docker Compose",
+    "GitHub Actions"
+  ],
+  "files": [
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "language": "markdown",
+      "sizeLines": 38,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md",
+      "language": "markdown",
+      "sizeLines": 20,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE/solution_submission_pull_request_template.md",
+      "language": "markdown",
+      "sizeLines": 9,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".github/workflows/test.yml",
+      "language": "yaml",
+      "sizeLines": 46,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".pre-commit-config.yaml",
+      "language": "yaml",
+      "sizeLines": 36,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "sizeLines": 87,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/.env",
+      "language": "config",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": "app/alembic.ini",
+      "language": "config",
+      "sizeLines": 116,
+      "fileCategory": "config"
+    },
+    {
+      "path": "app/apis/admin/schemas.py",
+      "language": "python",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/admin/service.py",
+      "language": "python",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/admin/services/get_disk_stats_service.py",
+      "language": "python",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/admin/services/reset_chef_password_service.py",
+      "language": "python",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/admin/utils.py",
+      "language": "python",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/auth/exceptions.py",
+      "language": "python",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/auth/schemas.py",
+      "language": "python",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/auth/service.py",
+      "language": "python",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/auth/services/get_profile_service.py",
+      "language": "python",
+      "sizeLines": 11,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/auth/services/get_token_service.py",
+      "language": "python",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/auth/services/patch_profile_service.py",
+      "language": "python",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/auth/services/register_user_service.py",
+      "language": "python",
+      "sizeLines": 52,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/auth/services/reset_password_new_password_service.py",
+      "language": "python",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/auth/services/reset_password_service.py",
+      "language": "python",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/auth/services/update_profile_service.py",
+      "language": "python",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/auth/utils/__init__.py",
+      "language": "python",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/auth/utils/jwt_auth.py",
+      "language": "python",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/auth/utils/roles_based_auth_checker.py",
+      "language": "python",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/auth/utils/text_code_utils.py",
+      "language": "python",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/auth/utils/utils.py",
+      "language": "python",
+      "sizeLines": 132,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/debug/service.py",
+      "language": "python",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/debug/services/get_debug_info_service.py",
+      "language": "python",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/healthcheck/service.py",
+      "language": "python",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/menu/schemas.py",
+      "language": "python",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/menu/service.py",
+      "language": "python",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/menu/services/create_menu_item_service.py",
+      "language": "python",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/menu/services/delete_menu_item_service.py",
+      "language": "python",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/menu/services/get_menu_service.py",
+      "language": "python",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/menu/services/update_menu_item_service.py",
+      "language": "python",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/menu/utils.py",
+      "language": "python",
+      "sizeLines": 73,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/orders/schemas.py",
+      "language": "python",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/orders/service.py",
+      "language": "python",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/orders/services/create_order_service.py",
+      "language": "python",
+      "sizeLines": 90,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/orders/services/get_order_service.py",
+      "language": "python",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/orders/services/get_order_status.py",
+      "language": "python",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/orders/services/get_orders_for_delivery_service.py",
+      "language": "python",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/orders/services/get_orders_service.py",
+      "language": "python",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/orders/utils.py",
+      "language": "python",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/referrals/schemas.py",
+      "language": "python",
+      "sizeLines": 12,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/referrals/service.py",
+      "language": "python",
+      "sizeLines": 86,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/referrals/utils.py",
+      "language": "python",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/router.py",
+      "language": "python",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/users/schemas.py",
+      "language": "python",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/users/service.py",
+      "language": "python",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/users/services/update_user_role_service.py",
+      "language": "python",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/apis/users/utils.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/config.py",
+      "language": "python",
+      "sizeLines": 76,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/db/base.py",
+      "language": "python",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/db/models.py",
+      "language": "python",
+      "sizeLines": 103,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/db/schemas.py",
+      "language": "python",
+      "sizeLines": 94,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/db/session.py",
+      "language": "python",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/game.py",
+      "language": "python",
+      "sizeLines": 310,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/init_app.py",
+      "language": "python",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/init.py",
+      "language": "python",
+      "sizeLines": 351,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/main.py",
+      "language": "python",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/migrations/env.py",
+      "language": "python",
+      "sizeLines": 81,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/migrations/README",
+      "language": "unknown",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/migrations/script.py.mako",
+      "language": "mako",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/migrations/versions/4a8c6c4dc451_added_reset_password_fields.py",
+      "language": "python",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/migrations/versions/e2470973db23_initial_migrations.py",
+      "language": "python",
+      "sizeLines": 110,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/migrations/versions/f23331e973f8_added_referrals.py",
+      "language": "python",
+      "sizeLines": 75,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/rate_limiting.py",
+      "language": "python",
+      "sizeLines": 4,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/tests/conftest.py",
+      "language": "python",
+      "sizeLines": 148,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/tests/modules/admin/test_admin_service.py",
+      "language": "python",
+      "sizeLines": 75,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/tests/modules/auth/test_auth_service.py",
+      "language": "python",
+      "sizeLines": 220,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/tests/modules/auth/test_roles_based_auth_checker.py",
+      "language": "python",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/tests/modules/healthcheck/test_healthcheck_service.py",
+      "language": "python",
+      "sizeLines": 4,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/tests/modules/menu/test_menu_service.py",
+      "language": "python",
+      "sizeLines": 84,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/tests/modules/orders/test_orders_service.py",
+      "language": "python",
+      "sizeLines": 680,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/tests/modules/referrals/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/tests/modules/referrals/test_referral_service.py",
+      "language": "python",
+      "sizeLines": 161,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/tests/vulns/level_0_technology_details_exposed_via_http_header.py",
+      "language": "python",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/tests/vulns/level_1_unrestricted_menu_item_deletion.py",
+      "language": "python",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/tests/vulns/level_2_unrestricted_profile_update_IDOR.py",
+      "language": "python",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/tests/vulns/level_3_privilege_escalation.py",
+      "language": "python",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/tests/vulns/level_4_server_side_request_forgery.py",
+      "language": "python",
+      "sizeLines": 87,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/tests/vulns/level_5_remote_code_execution.py",
+      "language": "python",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "language": "markdown",
+      "sizeLines": 73,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "language": "markdown",
+      "sizeLines": 66,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docker-compose.yml",
+      "language": "yaml",
+      "sizeLines": 37,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "Dockerfile",
+      "language": "dockerfile",
+      "sizeLines": 28,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "HALL_OF_FAME.md",
+      "language": "markdown",
+      "sizeLines": 43,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "pyproject.toml",
+      "language": "toml",
+      "sizeLines": 54,
+      "fileCategory": "config"
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "sizeLines": 118,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "start_app.sh",
+      "language": "shell",
+      "sizeLines": 4,
+      "fileCategory": "script"
+    },
+    {
+      "path": "start_game.sh",
+      "language": "shell",
+      "sizeLines": 4,
+      "fileCategory": "script"
+    },
+    {
+      "path": "stop_app.sh",
+      "language": "shell",
+      "sizeLines": 2,
+      "fileCategory": "script"
+    }
+  ],
+  "totalFiles": 95,
+  "filteredByIgnore": 0,
+  "estimatedComplexity": "moderate",
+  "importMap": {
+    ".github/ISSUE_TEMPLATE/bug_report.md": [],
+    ".github/ISSUE_TEMPLATE/feature_request.md": [],
+    ".github/PULL_REQUEST_TEMPLATE/solution_submission_pull_request_template.md": [],
+    ".github/workflows/test.yml": [],
+    ".pre-commit-config.yaml": [],
+    ".understand-anything/.understandignore": [],
+    "app/.env": [],
+    "app/alembic.ini": [],
+    "app/apis/admin/schemas.py": [],
+    "app/apis/admin/service.py": [
+      "app/apis/admin/services/get_disk_stats_service.py",
+      "app/apis/admin/services/reset_chef_password_service.py"
+    ],
+    "app/apis/admin/services/get_disk_stats_service.py": [
+      "app/apis/admin/schemas.py",
+      "app/apis/admin/utils.py",
+      "app/apis/auth/utils/__init__.py",
+      "app/db/models.py",
+      "app/db/session.py"
+    ],
+    "app/apis/admin/services/reset_chef_password_service.py": [
+      "app/apis/auth/utils/__init__.py",
+      "app/config.py",
+      "app/db/session.py"
+    ],
+    "app/apis/admin/utils.py": [],
+    "app/apis/auth/exceptions.py": [],
+    "app/apis/auth/schemas.py": [],
+    "app/apis/auth/service.py": [
+      "app/apis/auth/services/get_profile_service.py",
+      "app/apis/auth/services/get_token_service.py",
+      "app/apis/auth/services/patch_profile_service.py",
+      "app/apis/auth/services/register_user_service.py",
+      "app/apis/auth/services/reset_password_new_password_service.py",
+      "app/apis/auth/services/reset_password_service.py",
+      "app/apis/auth/services/update_profile_service.py"
+    ],
+    "app/apis/auth/services/get_profile_service.py": [
+      "app/apis/auth/schemas.py",
+      "app/apis/auth/utils/__init__.py"
+    ],
+    "app/apis/auth/services/get_token_service.py": [
+      "app/apis/auth/schemas.py",
+      "app/apis/auth/utils/__init__.py",
+      "app/db/session.py"
+    ],
+    "app/apis/auth/services/patch_profile_service.py": [
+      "app/apis/auth/utils/__init__.py",
+      "app/db/models.py",
+      "app/db/session.py"
+    ],
+    "app/apis/auth/services/register_user_service.py": [
+      "app/apis/auth/exceptions.py",
+      "app/apis/auth/schemas.py",
+      "app/apis/auth/utils/__init__.py",
+      "app/db/session.py"
+    ],
+    "app/apis/auth/services/reset_password_new_password_service.py": [
+      "app/apis/auth/schemas.py",
+      "app/apis/auth/utils/__init__.py",
+      "app/db/models.py",
+      "app/db/session.py"
+    ],
+    "app/apis/auth/services/reset_password_service.py": [
+      "app/apis/auth/utils/text_code_utils.py",
+      "app/db/models.py",
+      "app/db/session.py",
+      "app/rate_limiting.py"
+    ],
+    "app/apis/auth/services/update_profile_service.py": [
+      "app/apis/auth/utils/__init__.py",
+      "app/db/models.py",
+      "app/db/session.py"
+    ],
+    "app/apis/auth/utils/__init__.py": [
+      "app/apis/auth/utils/jwt_auth.py",
+      "app/apis/auth/utils/roles_based_auth_checker.py",
+      "app/apis/auth/utils/utils.py"
+    ],
+    "app/apis/auth/utils/jwt_auth.py": [
+      "app/apis/auth/schemas.py",
+      "app/apis/auth/utils/utils.py",
+      "app/config.py",
+      "app/db/session.py"
+    ],
+    "app/apis/auth/utils/roles_based_auth_checker.py": [
+      "app/apis/auth/utils/__init__.py",
+      "app/db/models.py"
+    ],
+    "app/apis/auth/utils/text_code_utils.py": [
+      "app/apis/auth/utils/utils.py",
+      "app/db/models.py"
+    ],
+    "app/apis/auth/utils/utils.py": [
+      "app/apis/auth/exceptions.py",
+      "app/config.py",
+      "app/db/models.py"
+    ],
+    "app/apis/debug/service.py": [
+      "app/apis/debug/services/get_debug_info_service.py"
+    ],
+    "app/apis/debug/services/get_debug_info_service.py": [],
+    "app/apis/healthcheck/service.py": [],
+    "app/apis/menu/schemas.py": [],
+    "app/apis/menu/service.py": [
+      "app/apis/menu/services/create_menu_item_service.py",
+      "app/apis/menu/services/delete_menu_item_service.py",
+      "app/apis/menu/services/get_menu_service.py",
+      "app/apis/menu/services/update_menu_item_service.py"
+    ],
+    "app/apis/menu/services/create_menu_item_service.py": [
+      "app/apis/auth/utils/__init__.py",
+      "app/db/models.py",
+      "app/db/session.py"
+    ],
+    "app/apis/menu/services/delete_menu_item_service.py": [
+      "app/apis/auth/utils/__init__.py",
+      "app/db/models.py",
+      "app/db/session.py"
+    ],
+    "app/apis/menu/services/get_menu_service.py": [
+      "app/db/models.py",
+      "app/db/session.py"
+    ],
+    "app/apis/menu/services/update_menu_item_service.py": [
+      "app/apis/auth/utils/__init__.py",
+      "app/db/models.py",
+      "app/db/session.py"
+    ],
+    "app/apis/menu/utils.py": [
+      "app/db/models.py"
+    ],
+    "app/apis/orders/schemas.py": [],
+    "app/apis/orders/service.py": [
+      "app/apis/orders/services/create_order_service.py",
+      "app/apis/orders/services/get_order_service.py",
+      "app/apis/orders/services/get_order_status.py",
+      "app/apis/orders/services/get_orders_for_delivery_service.py",
+      "app/apis/orders/services/get_orders_service.py"
+    ],
+    "app/apis/orders/services/create_order_service.py": [
+      "app/apis/auth/utils/__init__.py",
+      "app/db/models.py",
+      "app/db/session.py"
+    ],
+    "app/apis/orders/services/get_order_service.py": [
+      "app/apis/auth/utils/__init__.py",
+      "app/db/models.py",
+      "app/db/session.py"
+    ],
+    "app/apis/orders/services/get_order_status.py": [
+      "app/apis/auth/utils/__init__.py",
+      "app/apis/orders/utils.py",
+      "app/db/models.py",
+      "app/db/session.py"
+    ],
+    "app/apis/orders/services/get_orders_for_delivery_service.py": [
+      "app/db/models.py",
+      "app/db/session.py"
+    ],
+    "app/apis/orders/services/get_orders_service.py": [
+      "app/apis/auth/utils/__init__.py",
+      "app/db/models.py",
+      "app/db/session.py"
+    ],
+    "app/apis/orders/utils.py": [],
+    "app/apis/referrals/schemas.py": [],
+    "app/apis/referrals/service.py": [
+      "app/apis/auth/schemas.py",
+      "app/apis/auth/utils/__init__.py",
+      "app/apis/referrals/schemas.py",
+      "app/apis/referrals/utils.py",
+      "app/db/models.py",
+      "app/db/session.py"
+    ],
+    "app/apis/referrals/utils.py": [
+      "app/db/models.py"
+    ],
+    "app/apis/router.py": [
+      "app/apis/admin/service.py",
+      "app/apis/auth/service.py",
+      "app/apis/debug/service.py",
+      "app/apis/healthcheck/service.py",
+      "app/apis/menu/service.py",
+      "app/apis/orders/service.py",
+      "app/apis/referrals/service.py",
+      "app/apis/users/service.py",
+      "app/config.py"
+    ],
+    "app/apis/users/schemas.py": [],
+    "app/apis/users/service.py": [
+      "app/apis/users/services/update_user_role_service.py"
+    ],
+    "app/apis/users/services/update_user_role_service.py": [
+      "app/apis/auth/utils/__init__.py",
+      "app/apis/users/schemas.py",
+      "app/db/session.py"
+    ],
+    "app/apis/users/utils.py": [],
+    "app/config.py": [],
+    "app/db/base.py": [],
+    "app/db/models.py": [
+      "app/db/base.py"
+    ],
+    "app/db/schemas.py": [],
+    "app/db/session.py": [
+      "app/config.py"
+    ],
+    "app/game.py": [],
+    "app/init_app.py": [
+      "app/apis/router.py",
+      "app/config.py",
+      "app/rate_limiting.py"
+    ],
+    "app/init.py": [
+      "app/apis/auth/utils/__init__.py",
+      "app/apis/menu/schemas.py",
+      "app/apis/menu/utils.py",
+      "app/config.py",
+      "app/db/models.py",
+      "app/db/session.py"
+    ],
+    "app/main.py": [
+      "app/config.py",
+      "app/db/base.py",
+      "app/db/session.py",
+      "app/init_app.py",
+      "app/init.py"
+    ],
+    "app/migrations/env.py": [
+      "app/config.py",
+      "app/db/models.py"
+    ],
+    "app/migrations/README": [],
+    "app/migrations/script.py.mako": [],
+    "app/migrations/versions/4a8c6c4dc451_added_reset_password_fields.py": [],
+    "app/migrations/versions/e2470973db23_initial_migrations.py": [],
+    "app/migrations/versions/f23331e973f8_added_referrals.py": [],
+    "app/rate_limiting.py": [],
+    "app/tests/conftest.py": [
+      "app/apis/auth/utils/__init__.py",
+      "app/apis/router.py",
+      "app/db/base.py",
+      "app/db/models.py",
+      "app/db/session.py",
+      "app/init_app.py"
+    ],
+    "app/tests/modules/admin/test_admin_service.py": [
+      "app/db/models.py"
+    ],
+    "app/tests/modules/auth/test_auth_service.py": [
+      "app/apis/auth/utils/__init__.py",
+      "app/db/models.py"
+    ],
+    "app/tests/modules/auth/test_roles_based_auth_checker.py": [
+      "app/apis/auth/utils/__init__.py",
+      "app/db/models.py"
+    ],
+    "app/tests/modules/healthcheck/test_healthcheck_service.py": [],
+    "app/tests/modules/menu/test_menu_service.py": [
+      "app/db/models.py"
+    ],
+    "app/tests/modules/orders/test_orders_service.py": [
+      "app/apis/auth/utils/__init__.py",
+      "app/db/models.py"
+    ],
+    "app/tests/modules/referrals/__init__.py": [],
+    "app/tests/modules/referrals/test_referral_service.py": [
+      "app/apis/auth/utils/__init__.py",
+      "app/db/models.py"
+    ],
+    "app/tests/vulns/level_0_technology_details_exposed_via_http_header.py": [],
+    "app/tests/vulns/level_1_unrestricted_menu_item_deletion.py": [
+      "app/db/models.py"
+    ],
+    "app/tests/vulns/level_2_unrestricted_profile_update_IDOR.py": [
+      "app/db/models.py"
+    ],
+    "app/tests/vulns/level_3_privilege_escalation.py": [
+      "app/db/models.py"
+    ],
+    "app/tests/vulns/level_4_server_side_request_forgery.py": [
+      "app/db/models.py"
+    ],
+    "app/tests/vulns/level_5_remote_code_execution.py": [],
+    "CODE_OF_CONDUCT.md": [],
+    "CONTRIBUTING.md": [],
+    "docker-compose.yml": [],
+    "Dockerfile": [],
+    "HALL_OF_FAME.md": [],
+    "pyproject.toml": [],
+    "README.md": [],
+    "start_app.sh": [],
+    "start_game.sh": [],
+    "stop_app.sh": []
+  }
+}
